@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/aspect-ratio";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --background: #F4F4F4; /* Soft Off-White */
+  --foreground: #242424; /* Obsidian */
+
+  --primary: #111111; /* Nearly Black */
+  --primary-foreground: #ffffff;
+
+  --secondary: #EBEBEB; /* Light Gray */
+  --secondary-foreground: #111111;
+
+  --muted: #EBEBEB;
+  --muted-foreground: #666666;
+
+  --accent: #EBEBEB;
+  --accent-foreground: #111111;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+
+  --border: #E1E1E1; /* Subtle Border */
+  --input: #E1E1E1;
+  --ring: #111111;
+
+  --radius: 0.75rem; /* 12px default, will use usually more for cards */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0C0C0C; /* Deep Black/Gray */
+    --foreground: #EDEDED;
+
+    --primary: #EDEDED;
+    --primary-foreground: #111111;
+
+    --secondary: #1F1F1F;
+    --secondary-foreground: #EDEDED;
+
+    --muted: #1F1F1F;
+    --muted-foreground: #A1A1AA;
+
+    --accent: #1F1F1F;
+    --accent-foreground: #EDEDED;
+
+    --destructive: #7f1d1d;
+    --destructive-foreground: #fafafa;
+
+    --border: #2E2E2E;
+    --input: #2E2E2E;
+    --ring: #d4d4d8;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Utilities for Premium feel */
+@utility container-custom {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  max-width: 80rem; /* 7xl */
+}
