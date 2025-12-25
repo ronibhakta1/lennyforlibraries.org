@@ -7,8 +7,9 @@ const partners = [
   { name: "Internet Archive" },
   { name: "Open Library" },
   { name: "Archive Labs" },
-  { name: "The Common Crawl" },
-  { name: "DPLA" },
+  { name: "Internet Archive" },
+  { name: "Open Library" },
+  { name: "Archive Labs" },
 ]
 
 export function HeroPartnerSlider() {

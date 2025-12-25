@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center space-x-2">
-              <Library className="h-6 w-6" />
+              <img src="/images/lenny-transparent.png" className="h-8 w-8 object-contain" alt="Lenny Logo" />
               <span className="font-bold">Lenny for Libraries</span>
             </Link>
             <p className="text-sm text-muted-foreground font-medium">
@@ -22,26 +22,20 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Resources</h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><Link href="/blog" className="hover:text-foreground">Blog</Link></li>
-              <li><Link href="/about" className="hover:text-foreground">About Us</Link></li>
-              <li><Link href="/faq" className="hover:text-foreground">FAQ</Link></li>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--card-foreground)]">Quick Links</h3>
+            <ul className="space-y-3 text-sm text-[var(--card-muted)]">
+              <li><Link href="#features" className="hover:text-[var(--card-foreground)]">Features</Link></li>
+              <li><Link href="#about" className="hover:text-[var(--card-foreground)]">About</Link></li>
+              <li><Link href="https://github.com/lennyforlibraries/lenny" className="hover:text-[var(--card-foreground)]">GitHub</Link></li>
+              <li><a href="mailto:mek@archive.org" className="hover:text-[var(--card-foreground)]">Contact</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Community</h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><Link href="#" className="hover:text-foreground">Twitter</Link></li>
-              <li><Link href="#" className="hover:text-foreground">GitHub</Link></li>
-              <li><Link href="#" className="hover:text-foreground">Discord</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Legal</h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-foreground">Terms of Service</Link></li>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--card-foreground)]">Ecosystem</h3>
+            <ul className="space-y-3 text-sm text-[var(--card-muted)]">
+              <li><a href="https://openlibrary.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--card-foreground)]">OpenLibrary.org</a></li>
+              <li><a href="https://openlibrary.press" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--card-foreground)]">OpenLibrary.press</a></li>
+              <li><a href="https://archive.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--card-foreground)]">Internet Archive</a></li>
             </ul>
           </div>
         </div>

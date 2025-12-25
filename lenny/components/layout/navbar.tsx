@@ -34,8 +34,8 @@ export function Navbar() {
             alt="Lenny Logo" 
             className="h-9 w-8 group-hover:scale-110 transition-transform"
           />
-          <span className="font-extrabold text-xl tracking-tighter text-zinc-900 dark:text-zinc-100">
-            Lennyforlibraries<span className="text-zinc-400 font-medium">.org</span>
+          <span className="font-extrabold text-xl tracking-tighter text-[var(--card-foreground)]">
+            Lennyforlibraries<span className="text-[var(--card-muted)] font-medium">.org</span>
           </span>
         </Link>
         

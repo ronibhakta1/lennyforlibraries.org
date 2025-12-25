@@ -63,11 +63,6 @@ export function DeploymentOptions() {
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter className="pt-6">
-                <Button variant={option.variant as any} className="w-full rounded-2xl h-10">
-                  {option.cta}
-                </Button>
-              </CardFooter>
             </Card>
           ))}
         </div>

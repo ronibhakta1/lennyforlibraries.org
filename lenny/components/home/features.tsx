@@ -13,7 +13,7 @@ const features = [
     title: "Preloaded Books",
     description: "Thousands of open access titles included out of the box.",
     header: (
-      <div className="w-full h-full p-6 sm:p-8 bg-zinc-50/50 dark:bg-zinc-950/50 flex items-center justify-center overflow-hidden">
+      <div className="w-full h-full p-6 sm:p-8 bg-[var(--card-inner-background)] flex items-center justify-center overflow-hidden">
         <div className="grid grid-cols-4 sm:grid-cols-5 gap-3 w-full max-w-lg">
           {[
             "/images/features/book covers/0012622006-L.jpg",
@@ -28,7 +28,7 @@ const features = [
             "/images/features/book covers/william-gerhardie_futility-c3c1432e-cover@2x.avif"
           ].map((cover, i) => (
             <div key={i} className={cn(
-              "aspect-[3/4.5] bg-zinc-100 dark:bg-zinc-800 rounded-lg border border-zinc-200/50 dark:border-zinc-700/50 shadow-sm transition-all duration-500 hover:scale-110 cursor-default overflow-hidden"
+              "aspect-[3/4.5] bg-[var(--card-background)] rounded-lg border border-[var(--card-border)] shadow-sm transition-all duration-500 hover:scale-110 cursor-default overflow-hidden"
             )}>
               <img 
                 src={cover} 
@@ -40,7 +40,7 @@ const features = [
         </div>
       </div>
     ),
-    icon: <Globe className="h-5 w-5 text-zinc-500" />,
+    icon: <Globe className="h-5 w-5 text-[var(--card-muted)]" />,
     className: "md:col-span-2",
   },
   {
@@ -58,7 +58,7 @@ const features = [
             <div className="mt-12 space-y-4">
                <div className="h-32 rounded-2xl bg-zinc-900/50 border border-zinc-800/50 flex flex-col overflow-hidden">
                   <div className="p-2 pb-1">
-                    <span className="text-[10px] font-semibold text-zinc-400">Now Reading</span>
+                    <span className="text-[10px] font-semibold text-[var(--card-muted)]">Now Reading</span>
                   </div>
                   <div className="flex-1 relative bg-zinc-800/30">
                      <img 
@@ -81,14 +81,14 @@ const features = [
         </div>
       </div>
     ),
-    icon: <BookOpen className="h-5 w-5 text-zinc-500" />,
+    icon: <BookOpen className="h-5 w-5 text-[var(--card-muted)]" />,
     className: "md:col-span-1",
   },
   {
     title: "Bookshelf",
     description: "Securely store and host millions of digital books.",
     header: (
-      <div className="relative w-full h-full p-8 flex flex-col gap-6 overflow-hidden bg-zinc-50 dark:bg-zinc-950/50">
+      <div className="relative w-full h-full p-8 flex flex-col gap-6 overflow-hidden bg-[var(--card-inner-background)]">
         <div className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
           Your Bookshelf
         </div>
@@ -99,7 +99,7 @@ const features = [
             { title: "31 New Inn", cover: "/images/features/book covers/r-austin-freeman_the-mystery-of-31-new-inn-c3c1432e-cover@2x.avif" },
             { title: "Disappointed Man", cover: "/images/features/book covers/w-n-p-barbellion_the-journal-of-a-disappointed-man-c3c1432e-cover@2x.avif" }
           ].map((book, i) => (
-            <div key={i} className="rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 h-full flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow group/card">
+            <div key={i} className="rounded-2xl bg-[var(--card-background)] border border-[var(--card-border)] h-full flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow group/card">
                <div className="aspect-[3/4] w-full overflow-hidden border-b border-zinc-100 dark:border-zinc-800">
                  <img 
                    src={book.cover} 
@@ -108,7 +108,7 @@ const features = [
                  />
                </div>
                <div className="p-3">
-                 <div className="text-[10px] font-bold text-zinc-900 dark:text-zinc-100 truncate">
+                 <div className="text-[10px] font-bold text-[var(--card-foreground)] truncate">
                    {book.title}
                  </div>
                  <div className="h-1 w-1/2 bg-zinc-100 dark:bg-zinc-800 rounded-full mt-1.5" />
@@ -118,14 +118,14 @@ const features = [
         </div>
       </div>
     ),
-    icon: <BookOpen className="h-5 w-5 text-zinc-500" />,
+    icon: <BookOpen className="h-5 w-5 text-[var(--card-muted)]" />,
     className: "md:col-span-2",
   },
   {
     title: "Card Catalog",
     description: "Auto-sync metadata from OpenLibrary.",
     header: (
-      <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-zinc-50 dark:bg-zinc-950/50">
+      <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-[var(--card-inner-background)]">
         <div className="w-full max-w-[280px] flex flex-col gap-3 group-hover/bento:scale-105 transition-transform duration-500">
           {[
             {
@@ -145,7 +145,7 @@ const features = [
             }
           ].map((book, i) => (
             <div key={i} className={cn(
-              "h-16 bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm flex items-center px-3 gap-3 overflow-hidden",
+              "h-16 bg-[var(--card-background)] rounded-2xl border border-[var(--card-border)] shadow-sm flex items-center px-3 gap-3 overflow-hidden",
               i === 1 ? "opacity-100" : "opacity-40"
             )}>
               <div className="h-10 w-7 shrink-0 rounded-md overflow-hidden border border-zinc-100 dark:border-zinc-800 shadow-sm">
@@ -156,10 +156,10 @@ const features = [
                  />
               </div>
               <div className="flex-1 space-y-0.5 min-w-0">
-                <div className="text-[12px] font-bold text-zinc-900 dark:text-zinc-100 truncate">
+                <div className="text-[12px] font-bold text-[var(--card-foreground)] truncate">
                   {book.title}
                 </div>
-                <div className="text-[10px] font-medium text-zinc-500 dark:text-zinc-400 truncate">
+                <div className="text-[10px] font-medium text-[var(--card-muted)] truncate">
                   {book.author}
                 </div>
               </div>
@@ -168,7 +168,7 @@ const features = [
         </div>
       </div>
     ),
-    icon: <Globe className="h-5 w-5 text-zinc-500" />,
+    icon: <Globe className="h-5 w-5 text-[var(--card-muted)]" />,
     className: "md:col-span-1",
   },
   {
@@ -176,38 +176,38 @@ const features = [
     description: "Configurable rules & LCP support.",
     header: (
       <div className="w-full h-full flex items-end justify-center p-8 scale-105">
-        <div className="w-full h-40 bg-zinc-100 dark:bg-zinc-800 rounded-t-3xl border-x border-t border-zinc-200 dark:border-zinc-700 p-6 space-y-6 shadow-inner">
+        <div className="w-full h-40 bg-[var(--card-background)] rounded-t-3xl border-x border-t border-[var(--card-border)] p-6 space-y-6 shadow-inner">
             <div className="flex items-center justify-between">
-               <div className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+               <div className="text-sm font-semibold text-[var(--card-foreground)]">
                  The Great Gatsby
                </div>
-               <div className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-[10px] font-bold text-green-700 dark:text-green-400 rounded-full border border-green-200/50 dark:border-green-800/50">
+               <div className="px-3 py-1 text-[10px] font-bold rounded-full border badge-green">
                  Edit 
                </div>
             </div>
             <div className="space-y-2">
-               <div className="text-[11px] leading-relaxed text-zinc-500 dark:text-zinc-400 line-clamp-3">
+               <div className="text-[11px] leading-relaxed text-[var(--card-muted)] line-clamp-3">
                  A 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, it depicts first-person narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby.
                </div>
             </div>
         </div>
       </div>
     ),
-    icon: <ShieldCheck className="h-5 w-5 text-zinc-500" />,
+    icon: <ShieldCheck className="h-5 w-5 text-[var(--card-muted)]" />,
     className: "md:col-span-1",
   },
   {
     title: "Thorium Reader",
     description: "High-performance reading experience.",
     header: (
-      <div className="relative w-full h-full bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-3xl m-6 overflow-hidden shadow-xl scale-105 group/mockup">
+      <div className="relative w-full h-full bg-[var(--card-background)] border border-[var(--card-border)] rounded-3xl m-6 overflow-hidden shadow-xl scale-105 group/mockup">
         <div className="absolute top-0 left-0 right-0 h-10 bg-zinc-50 dark:bg-zinc-800 border-b border-zinc-100 dark:border-zinc-700 px-4 flex items-center justify-between">
           <div className="flex gap-2">
             <div className="h-2.5 w-2.5 rounded-full bg-red-400" />
             <div className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
             <div className="h-2.5 w-2.5 rounded-full bg-green-400" />
           </div>
-          <div className="text-[10px] font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest">
+          <div className="text-[10px] font-semibold text-[var(--card-muted)] uppercase tracking-widest">
             Thorium Reader
           </div>
           <div className="w-12" /> {/* Spacer to center title */}
@@ -223,7 +223,7 @@ const features = [
         </div>
       </div>
     ),
-    icon: <Zap className="h-5 w-5 text-zinc-500" />,
+    icon: <Zap className="h-5 w-5 text-[var(--card-muted)]" />,
     className: "md:col-span-1",
   },
   {
@@ -238,18 +238,18 @@ const features = [
             { title: "Great Gatsby", cover: "/images/features/book covers/w-r-burnett_little-caesar-c3c1432e-cover@2x.avif", action: "Borrow", price: "Free" },
             { title: "The Lone Wolf", cover: "/images/features/book covers/louis-joseph-vance_the-lone-wolf-c3c1432e-cover@2x.avif", action: "Buy", price: "$1.49" }
           ].map((item, i) => (
-            <div key={i} className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-3 shadow-sm flex flex-col gap-2 group/market-card hover:shadow-md transition-all">
+            <div key={i} className="bg-[var(--card-background)] border border-[var(--card-border)] rounded-xl p-3 shadow-sm flex flex-col gap-2 group/market-card hover:shadow-md transition-all">
                <div className="aspect-[3/4] rounded-lg overflow-hidden bg-zinc-50 dark:bg-zinc-950 border border-zinc-100 dark:border-zinc-800">
                   <img src={item.cover} className="w-full h-full object-cover grayscale transition-all group-hover/market-card:grayscale-0" alt={item.title} />
                </div>
                <div className="flex flex-col gap-1">
-                  <div className="text-[10px] font-bold truncate text-zinc-900 dark:text-zinc-100">{item.title}</div>
+                  <div className="text-[10px] font-bold truncate text-[var(--card-foreground)]">{item.title}</div>
                   <div className="flex items-center justify-between gap-1">
-                    <span className="text-[9px] font-medium text-zinc-500 dark:text-zinc-400">{item.price}</span>
-                    <div className={cn(
-                      "px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider",
-                      item.action === "Buy" ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900" : "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
-                    )}>
+                    <span className="text-[9px] font-medium text-[var(--card-muted)]">{item.price}</span>
+                     <div className={cn(
+                       "px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider border",
+                       item.action === "Buy" ? "badge-primary" : "badge-green"
+                     )}>
                       {item.action}
                     </div>
                   </div>
@@ -259,7 +259,7 @@ const features = [
         </div>
       </div>
     ),
-    icon: <Users className="h-5 w-5 text-zinc-500" />,
+    icon: <Users className="h-5 w-5 text-[var(--card-muted)]" />,
     className: "md:col-span-1",
   },
 ]

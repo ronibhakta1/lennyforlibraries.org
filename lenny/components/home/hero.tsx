@@ -21,7 +21,7 @@ export function Hero() {
           >
             <div className="inline-flex w-fit items-center rounded-full border border-zinc-200 bg-white px-4 py-1.5 text-sm font-medium text-zinc-900 shadow-sm transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100">
                <span className="flex h-2 w-2 rounded-full bg-black dark:bg-white mr-2"></span>
-               Lenny v1.0 is now live
+               Lenny 
             </div>
             <H1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tightest font-bold text-primary leading-[0.95]">
               Lenny: The <br className="hidden sm:block" /> Library-in-a-Box
@@ -37,8 +37,13 @@ export function Hero() {
                 </Button>
               </a>
               <a href="#about">
-                <Button variant="outline" size="lg" className="h-12 px-6 text-base rounded-full bg-white dark:bg-black">
+                <Button variant="outline" size="lg" className="h-12 px-6 text-base rounded-full bg-zinc-900 text-white hover:bg-zinc-800 hover:text-white border-zinc-900 dark:bg-black dark:text-white dark:border-zinc-800 dark:hover:bg-zinc-900 dark:hover:text-white">
                   Our Mission
+                </Button>
+              </a>
+              <a href="https://reader.archive.org/?opds=https://lennyforlibraries.org/v1/api/opds" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="lg" className="h-12 px-6 text-base rounded-full bg-white text-zinc-900 border-zinc-200 hover:bg-zinc-100 hover:text-zinc-900 dark:bg-black dark:text-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-900 dark:hover:text-zinc-50">
+                  Playground
                 </Button>
               </a>
             </div>

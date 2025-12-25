@@ -35,22 +35,22 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 border border-zinc-200 rounded-3xl group/bento hover:shadow-2xl hover:-translate-y-1 transition duration-500 shadow-input dark:shadow-none p-6 pb-0 dark:bg-zinc-900/50 dark:border-zinc-800 bg-white justify-between flex flex-col space-y-4 overflow-hidden",
+        "row-span-1 border border-[var(--card-border)] rounded-3xl group/bento hover:shadow-2xl hover:-translate-y-1 transition duration-500 shadow-sm dark:shadow-none p-6 pb-0 bg-[var(--card-background)] justify-between flex flex-col space-y-4 overflow-hidden",
         className
       )}
     >
       <div className="group-hover/bento:translate-x-1 transition duration-500">
         <div className="flex items-center gap-2 mb-2">
             {icon}
-            <div className="font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
+            <div className="font-bold text-[var(--card-foreground)] tracking-tight">
               {title}
             </div>
         </div>
-        <div className="font-normal text-zinc-500 text-sm dark:text-zinc-400 leading-snug max-w-[240px]">
+        <div className="font-normal text-[var(--card-muted)] text-sm leading-snug max-w-[240px]">
           {description}
         </div>
       </div>
-      <div className="flex flex-1 w-full h-full min-h-[14rem] rounded-t-2xl overflow-hidden bg-zinc-50 dark:bg-zinc-950/50 border-t border-x border-zinc-100 dark:border-zinc-900">
+      <div className="flex flex-1 w-full h-full min-h-[14rem] rounded-t-2xl overflow-hidden bg-[var(--card-inner-background)] border-t border-x border-[var(--card-border)]">
         {header}
       </div>
     </div>
