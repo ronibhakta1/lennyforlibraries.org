@@ -5,7 +5,7 @@ export function H1({ className, children, ...props }: React.HTMLAttributes<HTMLH
   return (
     <h1
       className={cn(
-        "scroll-m-20 text-4xl font-extrabold tracking-tighter lg:text-5xl text-foreground", // Reduced lg size
+        "scroll-m-20 text-4xl font-extrabold tracking-tighter lg:text-5xl text-foreground font-serif", // Reduced lg size
         className
       )}
       {...props}
@@ -19,7 +19,7 @@ export function H2({ className, children, ...props }: React.HTMLAttributes<HTMLH
   return (
     <h2
       className={cn(
-        "scroll-m-20 text-2xl font-bold tracking-tighter transition-colors first:mt-0 text-foreground md:text-3xl", // Reduced size
+        "scroll-m-20 text-2xl font-bold tracking-tighter transition-colors first:mt-0 text-foreground md:text-3xl font-serif", // Reduced size
         className
       )}
       {...props}
@@ -33,7 +33,7 @@ export function H3({ className, children, ...props }: React.HTMLAttributes<HTMLH
   return (
     <h3
       className={cn(
-        "scroll-m-20 text-2xl font-semibold tracking-tight",
+        "scroll-m-20 text-2xl font-semibold tracking-tight font-serif",
         className
       )}
       {...props}
