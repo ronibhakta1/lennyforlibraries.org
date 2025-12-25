@@ -5,11 +5,11 @@ import { Cpu, HardDrive, Server } from "lucide-react"
 
 export function Requirements() {
   return (
-    <Section className="py-24">
+    <Section className="py-16">
       <Container className="max-w-4xl">
-         <div className="mb-12 text-center">
-            <H2 className="text-3xl md:text-3xl font-bold tracking-tight mb-4">System Requirements</H2>
-            <Text className="text-lg text-muted-foreground">
+         <div className="mb-8 text-center">
+            <H2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">System Requirements</H2>
+            <Text className="text-base text-muted-foreground">
               Lenny is lightweight and can withstand high traffic on modest hardware.
             </Text>
          </div>

@@ -12,8 +12,8 @@ import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
 
 const navItems = [
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "Features", href: "#features" },
+  { name: "About", href: "#about" },
 ]
 
 export function Navbar() {
@@ -28,20 +28,25 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Container className="flex h-16 items-center justify-between">
-        <div className="flex gap-6 md:gap-10">
-          <Link href="/" className="flex items-center space-x-2">
-            <Library className="h-6 w-6" />
-            <span className="hidden font-bold sm:inline-block">
-              Lenny for Libraries
-            </span>
-          </Link>
-          <nav className="hidden gap-6 md:flex">
+        <Link href="/" className="flex items-center space-x-2 group">
+          <img 
+            src="/images/lenny-transparent.png" 
+            alt="Lenny Logo" 
+            className="h-9 w-8 group-hover:scale-110 transition-transform"
+          />
+          <span className="font-extrabold text-xl tracking-tighter text-zinc-900 dark:text-zinc-100">
+            Lennyforlibraries<span className="text-zinc-400 font-medium">.org</span>
+          </span>
+        </Link>
+        
+        <div className="flex items-center gap-6">
+          <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item, index) => (
               <Link
                 key={index}
                 href={item.href}
                 className={cn(
-                  "flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
+                  "text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
                   pathname === item.href && "text-foreground"
                 )}
               >
@@ -49,26 +54,33 @@ export function Navbar() {
               </Link>
             ))}
           </nav>
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="hidden md:flex md:items-center md:gap-4">
-            <Link href="/login">
-               <Button variant="ghost" size="sm">Log in</Button>
-            </Link>
-            <Link href="/donate">
-              <Button size="sm">Donate</Button>
-            </Link>
-            <ModeToggle />
+          
+          <div className="hidden md:block h-4 w-px bg-border/60" />
+
+          <div className="flex items-center gap-2">
+            <div className="hidden md:flex md:items-center md:gap-4">
+              <ModeToggle />
+              <a href="https://reader.archive.org/?opds=https://lennyforlibraries.org/v1/api/opds" target="_blank" rel="noopener noreferrer">
+                <Button size="sm" variant="outline" className="rounded-full px-5">
+                  Playground
+                </Button>
+              </a>
+              <a href="#installation">
+                <Button size="sm" className="rounded-full px-5 shadow-sm">
+                  Try Lenny
+                </Button>
+              </a>
+            </div>
+            <Button
+              variant="ghost"
+              className="md:hidden"
+              size="sm"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              <span className="sr-only">Toggle Menu</span>
+            </Button>
           </div>
-          <Button
-            variant="ghost"
-            className="md:hidden"
-            size="sm"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            <span className="sr-only">Toggle Menu</span>
-          </Button>
         </div>
       </Container>
       
@@ -95,12 +107,12 @@ export function Navbar() {
                   </Link>
                 ))}
                 <div className="mt-4 grid gap-2">
-                   <Link href="/login">
-                    <Button variant="outline" className="w-full justify-start">Log in</Button>
-                   </Link>
-                   <Link href="/donate">
-                    <Button className="w-full justify-start">Donate</Button>
-                   </Link>
+                   <a href="https://reader.archive.org/?opds=https://lennyforlibraries.org/v1/api/opds" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" className="w-full justify-start">Playground</Button>
+                   </a>
+                   <a href="#installation">
+                    <Button className="w-full justify-start">Try Lenny</Button>
+                   </a>
                    <div className="pt-2">
                      <ModeToggle />
                    </div>

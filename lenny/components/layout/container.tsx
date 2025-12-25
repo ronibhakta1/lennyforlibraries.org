@@ -15,7 +15,7 @@ export function Container({ className, children, ...props }: ContainerProps) {
 
 export function Section({ className, children, ...props }: ContainerProps) {
   return (
-    <section className={cn("py-16 md:py-24", className)} {...props}>
+    <section className={cn("py-16 md:py-24 overflow-hidden", className)} {...props}>
       {children}
     </section>
   )

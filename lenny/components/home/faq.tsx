@@ -29,9 +29,9 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <Section className="py-24 bg-zinc-50/50 dark:bg-zinc-950/20">
+    <Section className="py-16 bg-zinc-50/50 dark:bg-zinc-950/20">
       <Container className="max-w-3xl">
-        <H2 className="text-4xl font-bold tracking-tighter mb-12 text-center">Frequently Asked Questions</H2>
+        <H2 className="text-3xl font-bold tracking-tighter mb-8 text-center">Frequently Asked Questions</H2>
         
         <div className="space-y-4">
           {faqs.map((faq, i) => (
@@ -43,7 +43,7 @@ export function FAQ() {
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full px-6 py-6 flex items-center justify-between text-left hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors"
               >
-                <span className="font-bold text-lg tracking-tight">{faq.question}</span>
+                <span className="font-bold text-base tracking-tight">{faq.question}</span>
                 {openIndex === i ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
               </button>
               

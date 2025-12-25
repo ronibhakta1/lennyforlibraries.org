@@ -20,9 +20,9 @@ const variants = {
 }
 
 const sizes = {
-  sm: "h-9 rounded-full px-3 text-sm",
-  md: "h-10 rounded-full px-4 py-2",
-  lg: "h-12 rounded-full px-8 text-base",
+  sm: "h-8 rounded-full px-3 text-xs",
+  md: "h-9 rounded-full px-4 text-sm",
+  lg: "h-10 rounded-full px-6 text-sm",
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(

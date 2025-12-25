@@ -5,7 +5,7 @@ export function H1({ className, children, ...props }: React.HTMLAttributes<HTMLH
   return (
     <h1
       className={cn(
-        "scroll-m-20 text-4xl font-extrabold tracking-tighter lg:text-6xl text-foreground", // Increased size & tighter tracking
+        "scroll-m-20 text-4xl font-extrabold tracking-tighter lg:text-5xl text-foreground", // Reduced lg size
         className
       )}
       {...props}
@@ -19,7 +19,7 @@ export function H2({ className, children, ...props }: React.HTMLAttributes<HTMLH
   return (
     <h2
       className={cn(
-        "scroll-m-20 text-3xl font-bold tracking-tighter transition-colors first:mt-0 text-foreground md:text-4xl",
+        "scroll-m-20 text-2xl font-bold tracking-tighter transition-colors first:mt-0 text-foreground md:text-3xl", // Reduced size
         className
       )}
       {...props}
@@ -56,7 +56,7 @@ export function Text({ className, children, ...props }: React.HTMLAttributes<HTM
 
 export function Lead({ className, children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <p className={cn("text-xl text-muted-foreground", className)} {...props}>
+    <p className={cn("text-lg text-muted-foreground", className)} {...props}>
       {children}
     </p>
   )

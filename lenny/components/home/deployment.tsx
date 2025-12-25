@@ -8,48 +8,49 @@ export function DeploymentOptions() {
   const options = [
     {
       title: "Self-Hosted",
-      description: "Full control on your own hardware or VPS.",
+      description: "Run Lenny as a Docker container on your own server. Full control, full flexibility, zero vendor lock-in.",
       icon: <Server className="h-6 w-6" />,
-      features: ["One-line installer", "Ubuntu compatible", "Open Source"],
+      features: ["Open source & customizable", "Runs on standard Linux infrastructure", "Integrated with Open Library metadata"],
       cta: "Get Started",
       variant: "outline"
     },
     {
-      title: "Hardware",
-      description: "Pre-configured, plug-and-play units for libraries.",
+      title: "Plug & Play",
+      description: "Get Lenny pre-installed on a Raspberry Pi. Plug it in and start lending digital books securely.",
       icon: <Cpu className="h-6 w-6" />,
-      features: ["No setup required", "Optimized performance", "Maintenance-free"],
+      features: ["No setup required", "Offline-ready local lending", "Simple updates & connectivity"],
       cta: "Coming Soon",
-      variant: "secondary"
+      variant: "secondary",
+      recommended: true
     },
     {
-      title: "Cloud Hosted",
-      description: "Managed instances running on Lenny's infrastructure.",
+      title: "Hosted",
+      description: "Let us take care of everything. A hosted Lenny instance with a web dashboard for simple, secure access.",
       icon: <Cloud className="h-6 w-6" />,
-      features: ["Instant deployment", "Managed backups", "24/7 Support"],
+      features: ["Zero maintenance", "Web-based admin tools", "Scalable and secure infrastructure"],
       cta: "Coming Soon",
       variant: "secondary"
     }
   ]
 
   return (
-    <Section className="py-24">
+    <Section className="py-16">
       <Container>
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <H2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">Choose Your Deployment</H2>
-          <Text className="text-xl text-muted-foreground">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <H2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-3">Choose Your Deployment</H2>
+          <Text className="text-base text-muted-foreground">
             Lenny is designed to be flexible. Whether you want total control or a zero-effort setup, we have an option for you.
           </Text>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {options.map((option, i) => (
             <Card key={i} className="flex flex-col h-full rounded-[2rem] border-zinc-200 dark:border-zinc-800 p-4 transition-all hover:scale-[1.02]">
               <CardHeader>
                 <div className="h-12 w-12 rounded-2xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center mb-4 text-zinc-900 dark:text-zinc-100">
                   {option.icon}
                 </div>
-                <CardTitle className="text-2xl">{option.title}</CardTitle>
+                <CardTitle className="text-xl">{option.title}</CardTitle>
                 <Text className="text-muted-foreground mt-2">{option.description}</Text>
               </CardHeader>
               <CardContent className="flex-1 pt-4">
@@ -62,8 +63,8 @@ export function DeploymentOptions() {
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter className="pt-8">
-                <Button variant={option.variant as any} className="w-full rounded-2xl h-12">
+              <CardFooter className="pt-6">
+                <Button variant={option.variant as any} className="w-full rounded-2xl h-10">
                   {option.cta}
                 </Button>
               </CardFooter>

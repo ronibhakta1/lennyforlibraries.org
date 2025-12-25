@@ -39,8 +39,8 @@ export function Testimonials() {
   return (
     <Section>
       <Container className="text-center">
-        <H2 className="mb-12">Trusted by Librarians</H2>
-        <div className="relative mx-auto max-w-3xl min-h-[250px]">
+        <H2 className="mb-8">Trusted by Librarians</H2>
+        <div className="relative mx-auto max-w-3xl min-h-[200px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -52,8 +52,8 @@ export function Testimonials() {
             >
               <Card className="flex h-full flex-col items-center justify-center border-none bg-transparent shadow-none">
                 <CardContent className="flex flex-col items-center gap-6">
-                  <Quote className="h-12 w-12 text-muted-foreground/30" />
-                  <blockquote className="text-2xl font-medium leading-relaxed italic text-foreground">
+                  <Quote className="h-10 w-10 text-muted-foreground/30" />
+                  <blockquote className="text-xl font-medium leading-relaxed italic text-foreground">
                     &quot;{testimonials[current].quote}&quot;
                   </blockquote>
                   <div className="text-center">
