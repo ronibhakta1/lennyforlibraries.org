@@ -85,6 +85,11 @@ export const metadata: Metadata = {
     // google: "your-google-verification-code",
     // yandex: "your-yandex-verification-code",
   },
+  icons: {
+    icon: "/images/lenny-transparent.png",
+    shortcut: "/images/lenny-transparent.png",
+    apple: "/images/lenny-transparent.png",
+  },
 };
 
 export default function RootLayout({
