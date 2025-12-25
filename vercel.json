@@ -1,6 +1,3 @@
 {
-  "buildCommand": "cd lenny && bun run build",
-  "outputDirectory": "lenny/.next",
-  "installCommand": "cd lenny && bun install",
-  "framework": "nextjs"
+  "rootDirectory": "lenny"
 }
