@@ -71,7 +71,7 @@ export function Hero() {
       {/* Background Grid Pattern & Glows */}
       <div className="absolute inset-0 -z-10 h-full w-full">
          <div className="absolute inset-0 bg-[#F4F4F4] dark:bg-[#0C0C0C]"></div>
-         <div className="absolute h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+         <div className="absolute h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] mask-radial-gradient"></div>
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-white/50 to-transparent dark:from-zinc-900/20 -z-10"></div>
          <div className="absolute top-[10%] left-[10%] w-[30%] h-[30%] bg-zinc-200/40 dark:bg-zinc-800/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
          <div className="absolute bottom-[10%] right-[10%] w-[30%] h-[30%] bg-zinc-200/40 dark:bg-zinc-800/10 rounded-full blur-[120px] -z-10 animate-pulse" style={{ animationDelay: '2s' }}></div>

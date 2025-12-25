@@ -22,8 +22,69 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Lenny for Libraries",
-  description: "Building trust and credibility for libraries.",
+  title: {
+    default: "Lenny for Libraries - Open Source Digital Library Server",
+    template: "%s | Lenny for Libraries",
+  },
+  description: "Lenny is a plug-and-play, open-source, Library-in-a-Box that empowers libraries to preserve, own, and lend digital books on their own terms.",
+  keywords: [
+    "digital library",
+    "library server",
+    "OPDS",
+    "ebook lending",
+    "open source library",
+    "library software",
+    "digital books",
+    "LCP DRM",
+    "controlled digital lending",
+    "Internet Archive",
+    "OpenLibrary",
+  ],
+  authors: [{ name: "Archive Labs" }],
+  creator: "Archive Labs",
+  publisher: "Lenny for Libraries",
+  metadataBase: new URL("https://lennyforlibraries.org"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://lennyforlibraries.org",
+    siteName: "Lenny for Libraries",
+    title: "Lenny for Libraries - Open Source Digital Library Server",
+    description: "Lenny is a plug-and-play, open-source, Library-in-a-Box that empowers libraries to preserve, own, and lend digital books on their own terms.",
+    images: [
+      {
+        url: "/images/lenny-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Lenny for Libraries",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lenny for Libraries - Open Source Digital Library Server",
+    description: "Lenny is a plug-and-play, open-source, Library-in-a-Box that empowers libraries to preserve, own, and lend digital books on their own terms.",
+    images: ["/images/lenny-og.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // Add your verification codes here when you have them
+    // google: "your-google-verification-code",
+    // yandex: "your-yandex-verification-code",
+  },
 };
 
 export default function RootLayout({

@@ -167,3 +167,89 @@ body {
   color: var(--badge-primary-text);
   border-color: transparent;
 }
+
+/* =============================================================
+   Cross-Browser Compatibility Utilities (Safari, Chrome, Firefox)
+   ============================================================= */
+
+/* Smooth scrolling with Safari support */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Backdrop blur with webkit prefix for older Safari */
+@utility backdrop-blur-safari {
+  -webkit-backdrop-filter: blur(var(--blur-amount, 12px));
+  backdrop-filter: blur(var(--blur-amount, 12px));
+}
+
+/* Mask image gradient with webkit prefix for Safari */
+@utility mask-radial-gradient {
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, #000 70%, transparent 100%);
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, #000 70%, transparent 100%);
+}
+
+/* GPU acceleration for smoother animations */
+@utility gpu-accelerated {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Safari fix for overflow hidden with border-radius */
+@utility isolation-auto {
+  isolation: isolate;
+}
+
+/* Blur filter with webkit prefix */
+.blur-safari {
+  -webkit-filter: blur(var(--blur-radius, 120px));
+  filter: blur(var(--blur-radius, 120px));
+}
+
+/* Grayscale filter with webkit prefix */
+.grayscale-safari {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.grayscale-safari-0 {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+/* Transform with webkit prefix for older Safari */
+.transform-gpu {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Flexbox gap fallback for Safari < 14.1 */
+@supports not (gap: 1rem) {
+  .gap-fallback > * + * {
+    margin-left: var(--gap-size, 1rem);
+  }
+  .gap-fallback-y > * + * {
+    margin-top: var(--gap-size, 1rem);
+  }
+}
+
+/* Safari touch action for better mobile interactions */
+.touch-action-manipulation {
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+
+/* Prevent Safari from auto-zooming on form inputs */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}

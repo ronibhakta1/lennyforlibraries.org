@@ -23,8 +23,15 @@ export function HeroPartnerSlider() {
           <div className="relative flex w-full overflow-hidden">
             <motion.div
               className="flex whitespace-nowrap gap-8 sm:gap-12 md:gap-16 items-center"
+              style={{
+                willChange: "transform",
+                WebkitBackfaceVisibility: "hidden",
+                backfaceVisibility: "hidden",
+                WebkitTransformStyle: "preserve-3d",
+                transformStyle: "preserve-3d",
+              }}
               animate={{
-                x: ["0%", "-50%"],
+                x: [0, "-50%"],
               }}
               transition={{
                 duration: 20,
@@ -36,6 +43,11 @@ export function HeroPartnerSlider() {
                   <span
                   key={i}
                   className="text-sm sm:text-lg md:text-xl font-bold text-zinc-300 dark:text-zinc-700 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors cursor-default"
+                  style={{
+                    WebkitFontSmoothing: "antialiased",
+                    WebkitBackfaceVisibility: "hidden",
+                    backfaceVisibility: "hidden",
+                  }}
                 >
                   {partner.name}
                 </span>
