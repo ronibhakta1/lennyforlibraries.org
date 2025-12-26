@@ -48,7 +48,7 @@ const features = [
     description: "Load your Lenny feed on any device.",
     header: (
       <div className="w-full h-full flex justify-center items-end px-6">
-        <div className="relative w-[180px] h-full bg-zinc-950 rounded-t-[2.5rem] border-t-[6px] border-x-[6px] border-zinc-900 p-4 shadow-2xl ring-1 ring-white/10 overflow-hidden translate-y-2">
+        <div className="relative w-[180px] h-full bg-zinc-950 rounded-t-[2.5rem] border-t-[6px] border-x-[6px] border-zinc-700 p-4 shadow-2xl ring-2 ring-zinc-400/30 overflow-hidden translate-y-2">
            {/* Dynamic Island */}
            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-zinc-900 rounded-2xl flex items-center justify-center">
               <div className="w-1 h-1 rounded-full bg-blue-500/50 ml-6" />
@@ -56,11 +56,11 @@ const features = [
            
            {/* Screen content */}
             <div className="mt-12 space-y-4">
-               <div className="h-32 rounded-2xl bg-zinc-900/50 border border-zinc-800/50 flex flex-col overflow-hidden">
+               <div className="h-32 rounded-2xl bg-zinc-800 border border-zinc-700 flex flex-col overflow-hidden">
                   <div className="p-2 pb-1">
-                    <span className="text-[10px] font-semibold text-[var(--card-muted)]">Now Reading</span>
+                    <span className="text-[10px] font-semibold text-zinc-400">Now Reading</span>
                   </div>
-                  <div className="flex-1 relative bg-zinc-800/30">
+                  <div className="flex-1 relative bg-zinc-700/50">
                      <img 
                        src="/images/features/book covers/0012622006-L.jpg" 
                        className="absolute inset-0 w-full h-full object-cover opacity-80"
@@ -71,11 +71,11 @@ const features = [
                      </div>
                   </div>
                </div>
-              <div className="h-12 rounded-xl bg-zinc-900/50 border border-zinc-800/50 flex items-center px-3">
-                 <div className="w-1/2 h-2 bg-zinc-800 rounded-full" />
+              <div className="h-12 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center px-3">
+                 <div className="w-1/2 h-2 bg-zinc-500 rounded-full" />
               </div>
-              <div className="h-12 rounded-xl bg-zinc-900/50 border border-zinc-800/50 flex items-center px-3">
-                 <div className="w-1/3 h-2 bg-zinc-800 rounded-full" />
+              <div className="h-12 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center px-3">
+                 <div className="w-1/3 h-2 bg-zinc-500 rounded-full" />
               </div>
            </div>
         </div>
@@ -175,20 +175,29 @@ const features = [
     title: "Lending System",
     description: "Configurable rules & LCP support.",
     header: (
-      <div className="w-full h-full flex items-end justify-center p-8 scale-105">
-        <div className="w-full h-40 bg-[var(--card-background)] rounded-t-3xl border-x border-t border-[var(--card-border)] p-6 space-y-6 shadow-inner">
-            <div className="flex items-center justify-between">
-               <div className="text-sm font-semibold text-[var(--card-foreground)]">
-                 The Great Gatsby
-               </div>
-               <div className="px-3 py-1 text-[10px] font-bold rounded-full border badge-green">
-                 Edit 
-               </div>
-            </div>
-            <div className="space-y-2">
-               <div className="text-[11px] leading-relaxed text-[var(--card-muted)] line-clamp-3">
-                 A 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, it depicts first-person narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby.
-               </div>
+      <div className="w-full h-full flex items-end justify-center px-6 pt-4 pb-0">
+        <div className="w-full h-48 bg-[var(--card-background)] rounded-t-3xl border-x border-t border-[var(--card-border)] p-5">
+            <div className="flex gap-4 h-full">
+              <div className="h-full aspect-[3/4] rounded-xl overflow-hidden border border-zinc-100 dark:border-zinc-800 shadow-sm shrink-0">
+                <img 
+                  src="/images/features/book covers/w-r-burnett_little-caesar-c3c1432e-cover@2x.avif" 
+                  className="w-full h-full object-cover"
+                  alt="The Great Gatsby"
+                />
+              </div>
+              <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <div className="text-sm font-semibold text-[var(--card-foreground)]">
+                    The Great Gatsby
+                  </div>
+                  <div className="px-2.5 py-0.5 text-[9px] font-bold rounded-full border badge-green shrink-0">
+                    Edit 
+                  </div>
+                </div>
+                <div className="text-[10px] leading-relaxed text-[var(--card-muted)] line-clamp-5">
+                  A 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City,...
+                </div>
+              </div>
             </div>
         </div>
       </div>

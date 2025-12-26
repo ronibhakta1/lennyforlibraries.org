@@ -22,20 +22,20 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--card-foreground)]">Quick Links</h3>
-            <ul className="space-y-3 text-sm text-[var(--card-muted)]">
-              <li><Link href="#features" className="hover:text-[var(--card-foreground)]">Features</Link></li>
-              <li><Link href="#about" className="hover:text-[var(--card-foreground)]">About</Link></li>
-              <li><Link href="https://github.com/lennyforlibraries/lenny" className="hover:text-[var(--card-foreground)]">GitHub</Link></li>
-              <li><a href="mailto:mek@archive.org" className="hover:text-[var(--card-foreground)]">Contact</a></li>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">Quick Links</h3>
+            <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
+              <li><Link href="#features" className="hover:text-foreground transition-colors">Features</Link></li>
+              <li><Link href="#about" className="hover:text-foreground transition-colors">About</Link></li>
+              <li><Link href="https://github.com/lennyforlibraries/lenny" className="hover:text-foreground transition-colors">GitHub</Link></li>
+              <li><a href="mailto:mek@archive.org" className="hover:text-foreground transition-colors">Contact</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--card-foreground)]">Ecosystem</h3>
-            <ul className="space-y-3 text-sm text-[var(--card-muted)]">
-              <li><a href="https://openlibrary.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--card-foreground)]">OpenLibrary.org</a></li>
-              <li><a href="https://openlibrary.press" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--card-foreground)]">OpenLibrary.press</a></li>
-              <li><a href="https://archive.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--card-foreground)]">Internet Archive</a></li>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">Ecosystem</h3>
+            <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
+              <li><a href="https://openlibrary.org" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">OpenLibrary.org</a></li>
+              <li><a href="https://openlibrary.press" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">OpenLibrary.press</a></li>
+              <li><a href="https://archive.org" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Internet Archive</a></li>
             </ul>
           </div>
         </div>

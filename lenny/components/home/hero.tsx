@@ -19,7 +19,7 @@ export function Hero() {
              transition={{ duration: 0.5 }}
              className="flex flex-col gap-6 sm:gap-8"
           >
-            <div className="inline-flex w-fit items-center rounded-full border border-zinc-200 bg-white px-4 py-1.5 text-sm font-medium text-zinc-900 shadow-sm transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100">
+            <div className="inline-flex w-fit items-center rounded-full border border-zinc-200 bg-white px-4 py-1.5 text-sm font-medium text-zinc-900 shadow-sm transition-[background-color] duration-200 hover:bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 dark:hover:bg-zinc-900">
                <span className="flex h-2 w-2 rounded-full bg-black dark:bg-white mr-2"></span>
                Lenny 
             </div>
