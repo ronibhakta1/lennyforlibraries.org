@@ -58,8 +58,8 @@ export function Navbar() {
           <div className="hidden md:block h-4 w-px bg-border/60" />
 
           <div className="flex items-center gap-2">
+            <ModeToggle />
             <div className="hidden md:flex md:items-center md:gap-4">
-              <ModeToggle />
               <a href="https://reader.archive.org/?opds=https://lennyforlibraries.org/v1/api/opds" target="_blank" rel="noopener noreferrer">
                 <Button size="sm" variant="outline" className="rounded-full px-5">
                   Playground
@@ -113,9 +113,6 @@ export function Navbar() {
                    <a href="#installation">
                     <Button className="w-full justify-start">Try Lenny</Button>
                    </a>
-                   <div className="pt-2">
-                     <ModeToggle />
-                   </div>
                 </div>
               </nav>
             </Container>

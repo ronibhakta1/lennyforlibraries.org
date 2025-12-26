@@ -19,10 +19,6 @@ export function Hero() {
              transition={{ duration: 0.5 }}
              className="flex flex-col gap-6 sm:gap-8"
           >
-            <div className="inline-flex w-fit items-center rounded-full border border-zinc-200 bg-white px-4 py-1.5 text-sm font-medium text-zinc-900 shadow-sm transition-[background-color] duration-200 hover:bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 dark:hover:bg-zinc-900">
-               <span className="flex h-2 w-2 rounded-full bg-black dark:bg-white mr-2"></span>
-               Lenny 
-            </div>
             <H1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tightest font-bold text-primary leading-[0.95]">
               Lenny: The <br className="hidden sm:block" /> Library-in-a-Box
             </H1>
