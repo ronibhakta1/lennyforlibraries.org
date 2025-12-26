@@ -7,6 +7,7 @@ import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid"
 import { H2, Text } from "@/components/ui/typography"
 import { Container, Section } from "@/components/layout/container"
 import { cn } from "@/lib/utils"
+import { useStaggerChildren } from "@/lib/use-gsap-scroll"
 
 const features = [
   {
@@ -274,6 +275,8 @@ const features = [
 ]
 
 export function Features() {
+  const gridRef = useStaggerChildren("[data-bento-item]", { stagger: 0.12 })
+
   return (
     <Section id="features" className="bg-transparent">
       <Container>
@@ -284,18 +287,21 @@ export function Features() {
           </Text>
         </div>
         
-        <BentoGrid className="max-w-6xl mx-auto">
-           {features.map((item, i) => (
-             <BentoGridItem
-               key={i}
-               title={item.title}
-               description={item.description}
-               header={item.header}
-               icon={item.icon}
-               className={item.className}
-             />
-           ))}
-        </BentoGrid>
+        <div ref={gridRef}>
+          <BentoGrid className="max-w-6xl mx-auto">
+             {features.map((item, i) => (
+               <BentoGridItem
+                 key={i}
+                 title={item.title}
+                 description={item.description}
+                 header={item.header}
+                 icon={item.icon}
+                 className={item.className}
+                 data-bento-item
+               />
+             ))}
+          </BentoGrid>
+        </div>
       </Container>
     </Section>
   )

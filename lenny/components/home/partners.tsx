@@ -2,10 +2,13 @@
 
 import { Container } from "@/components/layout/container"
 import { Heart } from "lucide-react"
+import { useFadeInUp } from "@/lib/use-gsap-scroll"
 
 export function PartnersMarquee() {
+  const sectionRef = useFadeInUp()
+
   return (
-    <div className="pt-32 pb-12 bg-background border-y border-border">
+    <div ref={sectionRef} className="pt-32 pb-12 bg-background border-y border-border">
       <Container className="text-center">
         <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
           Built by Libraries, For Libraries

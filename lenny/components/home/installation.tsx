@@ -6,10 +6,13 @@ import { Check, Copy, Terminal } from "lucide-react"
 import { Container, Section } from "@/components/layout/container"
 import { H2, Text } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
+import { useScaleIn, useStaggerChildren } from "@/lib/use-gsap-scroll"
 
 export function Installation() {
   const [copied, setCopied] = useState(false)
   const command = "curl -fsSL https://raw.githubusercontent.com/ArchiveLabs/lenny/refs/heads/main/install.sh | sudo sh"
+  const terminalRef = useScaleIn()
+  const cardsRef = useStaggerChildren("[data-install-card]", { stagger: 0.15 })
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(command)
@@ -28,7 +31,7 @@ export function Installation() {
           Get Lenny running in minutes with our simple one-line installation command.
         </Text>
         
-        <div className="relative group mx-auto max-w-3xl">
+        <div ref={terminalRef} className="relative group mx-auto max-w-3xl">
           <div className="rounded-3xl border border-[var(--card-border)] bg-white p-2 shadow-lg dark:bg-zinc-900/50">
              <div className="flex items-center justify-between rounded-[1.25rem] bg-zinc-950 border border-zinc-800 p-3 sm:p-4">
                 <div className="flex items-center gap-2 sm:gap-4 overflow-x-auto pl-1 sm:pl-2">
@@ -43,7 +46,7 @@ export function Installation() {
                   onClick={copyToClipboard}
                   className="ml-2 sm:ml-4 h-8 w-8 sm:h-10 sm:w-10 p-0 rounded-lg sm:rounded-xl bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 shadow-sm flex-shrink-0"
                 >
-                  {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                  {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4 text-zinc-300" />}
                   <span className="sr-only">Copy command</span>
                 </Button>
              </div>
@@ -51,16 +54,16 @@ export function Installation() {
         </div>
 
         {/* Feature cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-8 sm:mt-10 max-w-3xl mx-auto">
-          <div className="p-3 sm:p-4 rounded-xl bg-[var(--card-background)] border border-[var(--card-border)] text-center shadow-sm">
+        <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-8 sm:mt-10 max-w-3xl mx-auto">
+          <div data-install-card className="p-3 sm:p-4 rounded-xl bg-[var(--card-background)] border border-[var(--card-border)] text-center shadow-sm">
             <div className="font-bold text-xs sm:text-sm mb-1 text-foreground">Downloads Dependencies</div>
             <p className="text-xs text-muted-foreground">Automatically installs Docker and all required components</p>
           </div>
-          <div className="p-3 sm:p-4 rounded-xl bg-[var(--card-background)] border border-[var(--card-border)] text-center shadow-sm">
+          <div data-install-card className="p-3 sm:p-4 rounded-xl bg-[var(--card-background)] border border-[var(--card-border)] text-center shadow-sm">
             <div className="font-bold text-sm mb-1 text-foreground">Quick Setup</div>
             <p className="text-xs text-muted-foreground">Configures Lenny with sensible defaults for immediate use</p>
           </div>
-          <div className="p-3 sm:p-4 rounded-xl bg-[var(--card-background)] border border-[var(--card-border)] text-center shadow-sm">
+          <div data-install-card className="p-3 sm:p-4 rounded-xl bg-[var(--card-background)] border border-[var(--card-border)] text-center shadow-sm">
             <div className="font-bold text-sm mb-1 text-foreground">Production Ready</div>
             <p className="text-xs text-muted-foreground">Includes security settings and optimization for library use</p>
           </div>
