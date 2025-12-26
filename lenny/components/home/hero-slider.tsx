@@ -14,7 +14,7 @@ const partners = [
 
 export function HeroPartnerSlider() {
   return (
-    <div className="py-4 -mt-16 md:-mt-24 lg:-mt-32 bg-background overflow-hidden relative z-20">
+    <div className="py-8 -mt-8 md:-mt-12 bg-background overflow-hidden relative z-20">
       <Container>
         <div className="flex flex-col items-center gap-4">
           <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
