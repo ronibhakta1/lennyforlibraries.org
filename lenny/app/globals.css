@@ -72,9 +72,9 @@
   --neutral-800: #262626;
   --neutral-900: #171717;
   
-  /* Accent - Used Sparingly (<5% of design) */
-  --accent-500: #F97316;
-  --accent-600: #EA580C;
+  /* Accent - Monochrome (black in light, adapts in dark) */
+  --accent-500: #18181B;
+  --accent-600: #09090B;
   
   /* 8px Spacing Grid */
   --space-1: 0.25rem;   /* 4px */

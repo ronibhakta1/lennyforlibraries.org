@@ -29,17 +29,12 @@ export function Hero() {
             <div className="flex flex-wrap gap-3 mt-2">
               <a href="#installation">
                 <Button size="lg" variant="accent" className="h-12 px-7 text-base rounded-lg">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
-              <a href="#about">
-                <Button variant="outline" size="lg" className="h-12 px-6 text-base rounded-lg border-zinc-300 text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800">
-                  Our Mission
+                  Install Now <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </a>
               <a href="https://reader.archive.org/?opds=https://lennyforlibraries.org/v1/api/opds" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="lg" className="h-12 px-6 text-base rounded-lg text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800">
-                  Playground
+                <Button variant="outline" size="lg" className="h-12 px-6 text-base rounded-lg border-zinc-300 text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800">
+                  Try Playground
                 </Button>
               </a>
             </div>
