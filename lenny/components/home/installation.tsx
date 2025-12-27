@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useCallback, memo } from "react"
 import { Check, Copy, Terminal } from "lucide-react"
 
 import { Container, Section } from "@/components/layout/container"
@@ -8,17 +8,54 @@ import { H2, Text } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
 import { useScaleIn, useStaggerChildren } from "@/lib/use-gsap-scroll"
 
-export function Installation() {
-  const [copied, setCopied] = useState(false)
-  const command = "curl -fsSL https://raw.githubusercontent.com/ArchiveLabs/lenny/refs/heads/main/install.sh | sudo sh"
-  const terminalRef = useScaleIn()
-  const cardsRef = useStaggerChildren("[data-install-card]", { stagger: 0.15 })
+const COMMAND = "curl -fsSL https://raw.githubusercontent.com/ArchiveLabs/lenny/refs/heads/main/install.sh | sudo sh"
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(command)
+// Memoized copy button to prevent parent re-renders
+const CopyButton = memo(function CopyButton() {
+  const [copied, setCopied] = useState(false)
+
+  const copyToClipboard = useCallback(() => {
+    navigator.clipboard.writeText(COMMAND)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
-  }
+  }, [])
+
+  return (
+    <Button
+      size="sm"
+      variant="secondary"
+      onClick={copyToClipboard}
+      className="ml-4 h-8 w-8 p-0 rounded-md bg-neutral-800 border border-neutral-700 hover:bg-neutral-700 flex-shrink-0 transition-colors"
+    >
+      {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4 text-neutral-400" />}
+      <span className="sr-only">Copy command</span>
+    </Button>
+  )
+})
+
+// Memoized feature cards
+const FeatureCards = memo(function FeatureCards({ cardsRef }: { cardsRef: React.RefObject<HTMLDivElement | null> }) {
+  return (
+    <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-8 sm:mt-10 max-w-3xl mx-auto">
+      <div data-install-card className="p-3 sm:p-4 rounded-xl bg-[var(--card-background)] border border-[var(--card-border)] text-center shadow-sm">
+        <div className="font-bold text-xs sm:text-sm mb-1 text-foreground">Downloads Dependencies</div>
+        <p className="text-xs text-muted-foreground">Automatically installs Docker and all required components</p>
+      </div>
+      <div data-install-card className="p-3 sm:p-4 rounded-xl bg-[var(--card-background)] border border-[var(--card-border)] text-center shadow-sm">
+        <div className="font-bold text-sm mb-1 text-foreground">Quick Setup</div>
+        <p className="text-xs text-muted-foreground">Configures Lenny with sensible defaults for immediate use</p>
+      </div>
+      <div data-install-card className="p-3 sm:p-4 rounded-xl bg-[var(--card-background)] border border-[var(--card-border)] text-center shadow-sm">
+        <div className="font-bold text-sm mb-1 text-foreground">Production Ready</div>
+        <p className="text-xs text-muted-foreground">Includes security settings and optimization for library use</p>
+      </div>
+    </div>
+  )
+})
+
+export function Installation() {
+  const terminalRef = useScaleIn()
+  const cardsRef = useStaggerChildren("[data-install-card]", { stagger: 0.15 })
 
   return (
     <Section id="installation" className="py-16 bg-white dark:bg-zinc-950 overflow-hidden">
@@ -37,37 +74,15 @@ export function Installation() {
                 <div className="flex items-center gap-3 overflow-x-auto">
                    <Terminal className="h-4 w-4 sm:h-5 sm:w-5 text-neutral-500 flex-shrink-0" />
                    <code className="font-mono text-xs sm:text-sm text-neutral-300 whitespace-nowrap text-left select-all">
-                      {command}
+                      {COMMAND}
                    </code>
                 </div>
-                <Button
-                  size="sm"
-                  variant="secondary"
-                  onClick={copyToClipboard}
-                  className="ml-4 h-8 w-8 p-0 rounded-md bg-neutral-800 border border-neutral-700 hover:bg-neutral-700 flex-shrink-0 transition-colors"
-                >
-                  {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4 text-neutral-400" />}
-                  <span className="sr-only">Copy command</span>
-                </Button>
+                <CopyButton />
              </div>
           </div>
         </div>
 
-        {/* Feature cards */}
-        <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-8 sm:mt-10 max-w-3xl mx-auto">
-          <div data-install-card className="p-3 sm:p-4 rounded-xl bg-[var(--card-background)] border border-[var(--card-border)] text-center shadow-sm">
-            <div className="font-bold text-xs sm:text-sm mb-1 text-foreground">Downloads Dependencies</div>
-            <p className="text-xs text-muted-foreground">Automatically installs Docker and all required components</p>
-          </div>
-          <div data-install-card className="p-3 sm:p-4 rounded-xl bg-[var(--card-background)] border border-[var(--card-border)] text-center shadow-sm">
-            <div className="font-bold text-sm mb-1 text-foreground">Quick Setup</div>
-            <p className="text-xs text-muted-foreground">Configures Lenny with sensible defaults for immediate use</p>
-          </div>
-          <div data-install-card className="p-3 sm:p-4 rounded-xl bg-[var(--card-background)] border border-[var(--card-border)] text-center shadow-sm">
-            <div className="font-bold text-sm mb-1 text-foreground">Production Ready</div>
-            <p className="text-xs text-muted-foreground">Includes security settings and optimization for library use</p>
-          </div>
-        </div>
+        <FeatureCards cardsRef={cardsRef} />
 
         {/* System Requirements note */}
         <p className="mt-6 text-xs text-muted-foreground max-w-2xl mx-auto">
