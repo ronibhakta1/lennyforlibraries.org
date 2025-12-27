@@ -20,7 +20,11 @@ export function Hero() {
              className="flex flex-col gap-6 sm:gap-8"
           >
             <H1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tightest font-bold text-primary leading-[0.95]">
-              Lenny: The <br className="hidden sm:block" /> Library-in-a-Box
+              Lenny: The <br className="hidden sm:block" />
+              <span className="relative inline-block">
+                <span className="relative z-10">Library-in-a-Box</span>
+                <span className="absolute bottom-1 left-0 right-0 h-3 bg-gradient-to-r from-amber-400/40 to-orange-400/40 dark:from-amber-500/30 dark:to-orange-500/30 -z-10 rounded-sm"></span>
+              </span>
             </H1>
             <Lead className="max-w-xl text-base md:text-lg text-muted-foreground font-medium tracking-tight">
                Lenny is a plug-and-play, open-source, Library-in-a-Box that empowers libraries to preserve, own, and lend digital books on their own terms.
@@ -28,7 +32,7 @@ export function Hero() {
 
             <div className="flex flex-wrap gap-3 mt-2">
               <a href="#installation">
-                <Button size="lg" className="h-12 px-6 text-base rounded-full">
+                <Button size="lg" variant="gradient" className="h-12 px-7 text-base rounded-full shadow-lg">
                   Get Started <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </a>

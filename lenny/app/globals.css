@@ -57,6 +57,17 @@
 
   --radius: 0.5rem;
   
+  /* New Accent Colors - Brand Identity */
+  --accent-primary: #F59E0B;
+  --accent-primary-hover: #D97706;
+  --accent-secondary: #0891B2;
+  --accent-secondary-hover: #0E7490;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
+  --gradient-secondary: linear-gradient(135deg, #0891B2 0%, #0369A1 100%);
+  --gradient-accent: linear-gradient(135deg, #F59E0B 0%, #0891B2 100%);
+  
   --card-background: #ffffff;
   --card-foreground: #0a0a0a;
   --card-muted: #71717a;
@@ -72,6 +83,11 @@
   
   --badge-primary-bg: #18181b;
   --badge-primary-text: #ffffff;
+  
+  /* New accent badges */
+  --badge-accent-bg: rgba(245, 158, 11, 0.15);
+  --badge-accent-text: #B45309;
+  --badge-accent-border: rgba(245, 158, 11, 0.3);
 }
 
 /* Dark mode via system preference */
@@ -105,6 +121,16 @@
     
     --badge-primary-bg: #f4f4f5;
     --badge-primary-text: #18181b;
+    
+    /* Accent colors stay vibrant in dark mode */
+    --accent-primary: #FBBF24;
+    --accent-primary-hover: #F59E0B;
+    --accent-secondary: #22D3EE;
+    --accent-secondary-hover: #06B6D4;
+    
+    --badge-accent-bg: rgba(251, 191, 36, 0.2);
+    --badge-accent-text: #FBBF24;
+    --badge-accent-border: rgba(251, 191, 36, 0.4);
   }
 }
 
@@ -138,6 +164,16 @@
   
   --badge-primary-bg: #f4f4f5;
   --badge-primary-text: #18181b;
+  
+  /* Accent colors stay vibrant in dark mode */
+  --accent-primary: #FBBF24;
+  --accent-primary-hover: #F59E0B;
+  --accent-secondary: #22D3EE;
+  --accent-secondary-hover: #06B6D4;
+  
+  --badge-accent-bg: rgba(251, 191, 36, 0.2);
+  --badge-accent-text: #FBBF24;
+  --badge-accent-border: rgba(251, 191, 36, 0.4);
 }
 
 body {
@@ -166,6 +202,25 @@ body {
   background-color: var(--badge-primary-bg);
   color: var(--badge-primary-text);
   border-color: transparent;
+}
+
+.badge-accent {
+  background-color: var(--badge-accent-bg);
+  color: var(--badge-accent-text);
+  border-color: var(--badge-accent-border);
+}
+
+/* Gradient Button Utility */
+.btn-gradient {
+  background: var(--gradient-primary);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.3), 
+              0 8px 10px -6px rgba(245, 158, 11, 0.2);
+  transform: translateY(-1px);
 }
 
 /* =============================================================

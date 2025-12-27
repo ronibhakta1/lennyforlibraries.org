@@ -32,19 +32,26 @@ export function Installation() {
         </Text>
         
         <div ref={terminalRef} className="relative group mx-auto max-w-3xl">
-          <div className="rounded-3xl border border-[var(--card-border)] bg-white p-2 shadow-lg dark:bg-zinc-900/50">
-             <div className="flex items-center justify-between rounded-[1.25rem] bg-zinc-950 border border-zinc-800 p-3 sm:p-4">
-                <div className="flex items-center gap-2 sm:gap-4 overflow-x-auto pl-1 sm:pl-2">
-                   <Terminal className="h-4 w-4 sm:h-5 sm:w-5 text-zinc-500 flex-shrink-0" />
+          <div className="rounded-3xl border border-[var(--card-border)] bg-white p-2 shadow-lg dark:bg-zinc-900/50 transition-shadow duration-300 hover:shadow-xl hover:shadow-amber-500/10 dark:hover:shadow-amber-400/5">
+             <div className="flex items-center justify-between rounded-[1.25rem] bg-zinc-950 border border-zinc-800 p-3 sm:p-4 relative overflow-hidden">
+                {/* Subtle gradient glow */}
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="flex items-center gap-2 sm:gap-4 overflow-x-auto pl-1 sm:pl-2 relative z-10">
+                   <Terminal className="h-4 w-4 sm:h-5 sm:w-5 text-amber-500/70 flex-shrink-0" />
                    <code className="font-mono text-xs sm:text-sm text-zinc-300 whitespace-nowrap text-left select-all">
-                      {command}
+                      <span className="text-teal-400">curl</span>{" "}
+                      <span className="text-zinc-500">-fsSL</span>{" "}
+                      <span className="text-amber-300">https://raw.githubusercontent.com/ArchiveLabs/lenny/refs/heads/main/install.sh</span>{" "}
+                      <span className="text-zinc-400">|</span>{" "}
+                      <span className="text-teal-400">sudo</span>{" "}
+                      <span className="text-teal-400">sh</span>
                    </code>
                 </div>
                 <Button
                   size="sm"
                   variant="secondary"
                   onClick={copyToClipboard}
-                  className="ml-2 sm:ml-4 h-8 w-8 sm:h-10 sm:w-10 p-0 rounded-lg sm:rounded-xl bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 shadow-sm flex-shrink-0"
+                  className="ml-2 sm:ml-4 h-8 w-8 sm:h-10 sm:w-10 p-0 rounded-lg sm:rounded-xl bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 hover:border-amber-500/50 shadow-sm flex-shrink-0 transition-colors relative z-10"
                 >
                   {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4 text-zinc-300" />}
                   <span className="sr-only">Copy command</span>

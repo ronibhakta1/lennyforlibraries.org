@@ -3,6 +3,7 @@
 import { Container, Section } from "@/components/layout/container"
 import { H2, Text } from "@/components/ui/typography"
 import { useFadeInUp, useStaggerChildren } from "@/lib/use-gsap-scroll"
+import { BookOpen, PenTool, Globe } from "lucide-react"
 
 export function Vision() {
   const headingRef = useFadeInUp()

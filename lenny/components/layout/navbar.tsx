@@ -66,7 +66,7 @@ export function Navbar() {
                 </Button>
               </a>
               <a href="#installation">
-                <Button size="sm" className="rounded-full px-5 shadow-sm">
+                <Button size="sm" variant="gradient" className="rounded-full px-5">
                   Try Lenny
                 </Button>
               </a>
@@ -111,8 +111,12 @@ export function Navbar() {
                     <Button variant="outline" className="w-full justify-start">Playground</Button>
                    </a>
                    <a href="#installation">
-                    <Button className="w-full justify-start">Try Lenny</Button>
+                    <Button variant="gradient" className="w-full justify-start">Try Lenny</Button>
                    </a>
+                </div>
+                <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
+                  <span className="text-sm text-muted-foreground">Theme</span>
+                  <ModeToggle />
                 </div>
               </nav>
             </Container>

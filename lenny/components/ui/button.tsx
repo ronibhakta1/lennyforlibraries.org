@@ -5,7 +5,7 @@ import { motion, type HTMLMotionProps } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 interface ButtonProps extends HTMLMotionProps<"button"> {
-  variant?: "primary" | "secondary" | "outline" | "ghost" | "link"
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "link" | "gradient"
   size?: "sm" | "md" | "lg"
   loading?: boolean
   children?: React.ReactNode
@@ -17,6 +17,7 @@ const variants = {
   outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
   ghost: "hover:bg-accent hover:text-accent-foreground",
   link: "text-primary underline-offset-4 hover:underline",
+  gradient: "btn-gradient",
 }
 
 const sizes = {
