@@ -21,7 +21,7 @@ export function Installation() {
   }
 
   return (
-    <Section id="installation" className="py-16 bg-background overflow-hidden">
+    <Section id="installation" className="py-16 bg-white dark:bg-zinc-950 overflow-hidden">
       <Container className="max-w-4xl text-center relative">
         {/* Glow effect */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-zinc-200/50 dark:bg-zinc-800/20 rounded-full blur-3xl -z-10"></div>
@@ -32,28 +32,21 @@ export function Installation() {
         </Text>
         
         <div ref={terminalRef} className="relative group mx-auto max-w-3xl">
-          <div className="rounded-3xl border border-[var(--card-border)] bg-white p-2 shadow-lg dark:bg-zinc-900/50 transition-shadow duration-300 hover:shadow-xl hover:shadow-amber-500/10 dark:hover:shadow-amber-400/5">
-             <div className="flex items-center justify-between rounded-[1.25rem] bg-zinc-950 border border-zinc-800 p-3 sm:p-4 relative overflow-hidden">
-                {/* Subtle gradient glow */}
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="flex items-center gap-2 sm:gap-4 overflow-x-auto pl-1 sm:pl-2 relative z-10">
-                   <Terminal className="h-4 w-4 sm:h-5 sm:w-5 text-amber-500/70 flex-shrink-0" />
-                   <code className="font-mono text-xs sm:text-sm text-zinc-300 whitespace-nowrap text-left select-all">
-                      <span className="text-teal-400">curl</span>{" "}
-                      <span className="text-zinc-500">-fsSL</span>{" "}
-                      <span className="text-amber-300">https://raw.githubusercontent.com/ArchiveLabs/lenny/refs/heads/main/install.sh</span>{" "}
-                      <span className="text-zinc-400">|</span>{" "}
-                      <span className="text-teal-400">sudo</span>{" "}
-                      <span className="text-teal-400">sh</span>
+          <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-1.5 shadow-sm hover:shadow-md transition-shadow duration-200">
+             <div className="flex items-center justify-between rounded-lg bg-neutral-900 dark:bg-neutral-950 p-4">
+                <div className="flex items-center gap-3 overflow-x-auto">
+                   <Terminal className="h-4 w-4 sm:h-5 sm:w-5 text-neutral-500 flex-shrink-0" />
+                   <code className="font-mono text-xs sm:text-sm text-neutral-300 whitespace-nowrap text-left select-all">
+                      {command}
                    </code>
                 </div>
                 <Button
                   size="sm"
                   variant="secondary"
                   onClick={copyToClipboard}
-                  className="ml-2 sm:ml-4 h-8 w-8 sm:h-10 sm:w-10 p-0 rounded-lg sm:rounded-xl bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 hover:border-amber-500/50 shadow-sm flex-shrink-0 transition-colors relative z-10"
+                  className="ml-4 h-8 w-8 p-0 rounded-md bg-neutral-800 border border-neutral-700 hover:bg-neutral-700 flex-shrink-0 transition-colors"
                 >
-                  {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4 text-zinc-300" />}
+                  {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4 text-neutral-400" />}
                   <span className="sr-only">Copy command</span>
                 </Button>
              </div>

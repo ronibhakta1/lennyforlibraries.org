@@ -8,7 +8,7 @@ import { DeploymentOptions } from "@/components/home/deployment"
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-0 bg-background">
+    <div className="flex flex-col gap-0 bg-white dark:bg-zinc-950">
       <Hero />
       <HeroPartnerSlider />
       <Installation />

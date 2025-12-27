@@ -20,11 +20,7 @@ export function Hero() {
              className="flex flex-col gap-6 sm:gap-8"
           >
             <H1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tightest font-bold text-primary leading-[0.95]">
-              Lenny: The <br className="hidden sm:block" />
-              <span className="relative inline-block">
-                <span className="relative z-10">Library-in-a-Box</span>
-                <span className="absolute bottom-1 left-0 right-0 h-3 bg-gradient-to-r from-amber-400/40 to-orange-400/40 dark:from-amber-500/30 dark:to-orange-500/30 -z-10 rounded-sm"></span>
-              </span>
+              Lenny: The <br className="hidden sm:block" />Library-in-a-Box
             </H1>
             <Lead className="max-w-xl text-base md:text-lg text-muted-foreground font-medium tracking-tight">
                Lenny is a plug-and-play, open-source, Library-in-a-Box that empowers libraries to preserve, own, and lend digital books on their own terms.
@@ -32,17 +28,17 @@ export function Hero() {
 
             <div className="flex flex-wrap gap-3 mt-2">
               <a href="#installation">
-                <Button size="lg" variant="gradient" className="h-12 px-7 text-base rounded-full shadow-lg">
+                <Button size="lg" variant="accent" className="h-12 px-7 text-base rounded-lg">
                   Get Started <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </a>
               <a href="#about">
-                <Button variant="outline" size="lg" className="h-12 px-6 text-base rounded-full bg-zinc-900 text-white hover:bg-zinc-800 hover:text-white border-zinc-900 dark:bg-black dark:text-white dark:border-zinc-800 dark:hover:bg-zinc-900 dark:hover:text-white">
+                <Button variant="outline" size="lg" className="h-12 px-6 text-base rounded-lg border-zinc-300 text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800">
                   Our Mission
                 </Button>
               </a>
               <a href="https://reader.archive.org/?opds=https://lennyforlibraries.org/v1/api/opds" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg" className="h-12 px-6 text-base rounded-full bg-white text-zinc-900 border-zinc-200 hover:bg-zinc-100 hover:text-zinc-900 dark:bg-black dark:text-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-900 dark:hover:text-zinc-50">
+                <Button variant="ghost" size="lg" className="h-12 px-6 text-base rounded-lg text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800">
                   Playground
                 </Button>
               </a>
@@ -70,11 +66,8 @@ export function Hero() {
       
       {/* Background Grid Pattern & Glows */}
       <div className="absolute inset-0 -z-10 h-full w-full">
-         <div className="absolute inset-0 bg-[#F4F4F4] dark:bg-[#0C0C0C]"></div>
-         <div className="absolute h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] mask-radial-gradient"></div>
-         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-white/50 to-transparent dark:from-zinc-900/20 -z-10"></div>
-         <div className="absolute top-[10%] left-[10%] w-[30%] h-[30%] bg-zinc-200/40 dark:bg-zinc-800/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
-         <div className="absolute bottom-[10%] right-[10%] w-[30%] h-[30%] bg-zinc-200/40 dark:bg-zinc-800/10 rounded-full blur-[120px] -z-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
+         <div className="absolute inset-0 bg-zinc-50 dark:bg-zinc-950"></div>
+         <div className="absolute h-full w-full bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:48px_48px]"></div>
       </div>
     </Section>
   )

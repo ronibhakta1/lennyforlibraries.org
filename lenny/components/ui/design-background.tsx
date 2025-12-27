@@ -16,7 +16,7 @@ export function DesignBackground() {
   return (
     <div className="fixed inset-0 -z-50 h-full w-full pointer-events-none overflow-hidden isolate">
       {/* Base Background */}
-      <div className="absolute inset-0 bg-background transition-colors duration-300" />
+      <div className="absolute inset-0 bg-white dark:bg-zinc-950 transition-colors duration-300" />
 
       {/* Noise Texture */}
       <div 

@@ -8,7 +8,7 @@ export function PartnersMarquee() {
   const sectionRef = useFadeInUp()
 
   return (
-    <div ref={sectionRef} className="pt-32 pb-12 bg-background border-y border-border">
+    <div ref={sectionRef} className="pt-32 pb-12 bg-zinc-50 dark:bg-zinc-950 border-y border-zinc-200 dark:border-zinc-800">
       <Container className="text-center">
         <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
           Built by Libraries, For Libraries

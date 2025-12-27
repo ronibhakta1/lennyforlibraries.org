@@ -177,7 +177,7 @@ const features = [
     description: "Configurable rules & LCP support.",
     header: (
       <div className="w-full h-full flex items-end justify-center px-6 pt-4 pb-0">
-        <div className="w-full h-48 bg-[var(--card-background)] rounded-t-3xl border-x border-t border-[var(--card-border)] p-5">
+        <div className="w-full h-48 bg-[var(--card-background)] rounded-t-3xl border-x border-t border-[var(--card-border)] p-5 overflow-visible">
             <div className="flex gap-4 h-full">
               <div className="h-full aspect-[3/4] rounded-xl overflow-hidden border border-zinc-100 dark:border-zinc-800 shadow-sm shrink-0">
                 <img 
@@ -186,8 +186,8 @@ const features = [
                   alt="The Great Gatsby"
                 />
               </div>
-              <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
-                <div className="flex items-start justify-between gap-2 mb-2">
+              <div className="flex flex-col flex-1 min-w-0">
+                <div className="flex items-start justify-between gap-2 mb-2 flex-wrap">
                   <div className="text-sm font-semibold text-[var(--card-foreground)]">
                     The Great Gatsby
                   </div>

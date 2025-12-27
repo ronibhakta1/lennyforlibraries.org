@@ -26,13 +26,13 @@ export function Navbar() {
   }, [pathname])
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur backdrop-blur-safari supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-zinc-200/40 dark:border-zinc-800/40 bg-white/95 dark:bg-zinc-950/95 backdrop-blur backdrop-blur-safari supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-zinc-950/60">
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2 group">
           <img 
             src="/images/lenny-transparent.png" 
             alt="Lenny Logo" 
-            className="h-9 w-8 group-hover:scale-110 transition-transform"
+            className="h-10 w-8 group-hover:scale-110 transition-transform"
           />
           <span className="font-extrabold text-xl tracking-tighter text-[var(--card-foreground)]">
             Lennyforlibraries<span className="text-[var(--card-muted)] font-medium">.org</span>
@@ -66,7 +66,7 @@ export function Navbar() {
                 </Button>
               </a>
               <a href="#installation">
-                <Button size="sm" variant="gradient" className="rounded-full px-5">
+                <Button size="sm" variant="accent" className="rounded-full px-5">
                   Try Lenny
                 </Button>
               </a>
@@ -90,7 +90,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="border-b bg-background md:hidden"
+            className="border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 md:hidden"
           >
             <Container className="py-4">
               <nav className="grid gap-2">
@@ -111,7 +111,7 @@ export function Navbar() {
                     <Button variant="outline" className="w-full justify-start">Playground</Button>
                    </a>
                    <a href="#installation">
-                    <Button variant="gradient" className="w-full justify-start">Try Lenny</Button>
+                    <Button variant="accent" className="w-full justify-start">Try Lenny</Button>
                    </a>
                 </div>
                 <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">

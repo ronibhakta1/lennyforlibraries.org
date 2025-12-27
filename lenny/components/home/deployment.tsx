@@ -1,63 +1,72 @@
+"use client"
+
 import { Container, Section } from "@/components/layout/container"
 import { H2, Text } from "@/components/ui/typography"
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Server, Cpu, Cloud, Check } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 export function DeploymentOptions() {
   const options = [
     {
       title: "Self-Hosted",
-      description: "Run Lenny as a Docker container on your own server. Full control, full flexibility, zero vendor lock-in.",
+      description: "Run Lenny as a Docker container on your own server. Full control, full flexibility.",
       icon: <Server className="h-6 w-6" />,
-      features: ["Open source & customizable", "Runs on standard Linux infrastructure", "Integrated with Open Library metadata"],
-      cta: "Get Started",
-      variant: "outline"
+      features: ["Open source & customizable", "Standard Linux infrastructure", "Open Library integration"],
     },
     {
       title: "Plug & Play",
-      description: "Get Lenny pre-installed on a Raspberry Pi. Plug it in and start lending digital books securely.",
+      description: "Get Lenny pre-installed on a Raspberry Pi. Plug it in and start lending.",
       icon: <Cpu className="h-6 w-6" />,
-      features: ["No setup required", "Offline-ready local lending", "Simple updates & connectivity"],
-      cta: "Coming Soon",
-      variant: "secondary",
+      features: ["No setup required", "Offline-ready", "Simple updates"],
       recommended: true
     },
     {
       title: "Hosted",
-      description: "Let us take care of everything. A hosted Lenny instance with a web dashboard for simple, secure access.",
+      description: "Let us handle everything. A hosted instance with web dashboard access.",
       icon: <Cloud className="h-6 w-6" />,
-      features: ["Zero maintenance", "Web-based admin tools", "Scalable and secure infrastructure"],
-      cta: "Coming Soon",
-      variant: "secondary"
+      features: ["Zero maintenance", "Web-based admin", "Scalable infrastructure"],
     }
   ]
 
   return (
-    <Section className="py-16">
+    <Section className="py-24 bg-white dark:bg-zinc-950">
       <Container>
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <H2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-3">Choose Your Deployment</H2>
-          <Text className="text-base text-muted-foreground">
-            Lenny is designed to be flexible. Whether you want total control or a zero-effort setup, we have an option for you.
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <H2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-zinc-900 dark:text-zinc-100">Choose Your Deployment</H2>
+          <Text className="text-base text-zinc-600 dark:text-zinc-400">
+            Whether you want total control or a zero-effort setup, we have an option for you.
           </Text>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {options.map((option, i) => (
-            <Card key={i} className="flex flex-col h-full rounded-[2rem] border-zinc-200 dark:border-zinc-800 p-4 transition-all hover:scale-[1.02]">
-              <CardHeader>
-                <div className="h-12 w-12 rounded-2xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center mb-4 text-zinc-900 dark:text-zinc-100">
+            <Card 
+              key={i} 
+              className={cn(
+                "group flex flex-col h-full rounded-2xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg bg-white dark:bg-zinc-900",
+                option.recommended 
+                  ? "border-2 border-orange-500 relative" 
+                  : "border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700"
+              )}
+            >
+              <CardHeader className="p-0 pb-4">
+                {option.recommended && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-xs font-semibold bg-orange-500 text-white rounded-full">
+                    Recommended
+                  </div>
+                )}
+                <div className="h-12 w-12 rounded-xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center mb-4 text-zinc-900 dark:text-zinc-100">
                   {option.icon}
                 </div>
-                <CardTitle className="text-xl">{option.title}</CardTitle>
-                <Text className="text-muted-foreground mt-2">{option.description}</Text>
+                <CardTitle className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">{option.title}</CardTitle>
+                <Text className="text-zinc-600 dark:text-zinc-400 mt-2 text-sm">{option.description}</Text>
               </CardHeader>
-              <CardContent className="flex-1 pt-4">
+              <CardContent className="flex-1 p-0 pt-4">
                 <ul className="space-y-3">
                   {option.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-3 text-sm font-medium">
-                      <Check className="h-4 w-4 text-green-500" />
+                    <li key={j} className="flex items-center gap-3 text-sm text-zinc-700 dark:text-zinc-300">
+                      <Check className="h-4 w-4 text-green-600 dark:text-green-500 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}

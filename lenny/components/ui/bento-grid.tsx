@@ -35,12 +35,12 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 border border-[var(--card-border)] rounded-3xl group/bento hover:shadow-2xl hover:shadow-amber-500/5 dark:hover:shadow-amber-400/5 hover:-translate-y-1.5 transition-all duration-500 ease-out shadow-sm dark:shadow-none p-6 pb-0 bg-[var(--card-background)] justify-between flex flex-col space-y-4 overflow-hidden gpu-accelerated isolation-auto relative",
-        "before:absolute before:inset-0 before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100 before:bg-gradient-to-br before:from-amber-500/5 before:via-transparent before:to-teal-500/5 before:rounded-3xl before:pointer-events-none",
+        "row-span-1 border border-[var(--card-border)] rounded-2xl group/bento hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out shadow-sm dark:shadow-none p-6 pb-0 bg-[var(--card-background)] justify-between flex flex-col space-y-4 overflow-hidden",
+        "hover:border-neutral-300 dark:hover:border-neutral-700",
         className
       )}
     >
-      <div className="group-hover/bento:translate-x-1 transition duration-500 relative z-10">
+      <div className="group-hover/bento:translate-x-1 transition duration-300">
         <div className="flex items-center gap-2 mb-2">
             {icon}
             <div className="font-bold text-[var(--card-foreground)] tracking-tight">
@@ -51,7 +51,7 @@ export const BentoGridItem = ({
           {description}
         </div>
       </div>
-      <div className="flex flex-1 w-full h-full min-h-[14rem] rounded-t-2xl overflow-hidden bg-[var(--card-inner-background)] border-t border-x border-[var(--card-border)] relative z-10">
+      <div className="flex flex-1 w-full h-full min-h-[14rem] rounded-t-xl overflow-hidden bg-[var(--card-inner-background)] border-t border-x border-[var(--card-border)]">
         {header}
       </div>
     </div>
