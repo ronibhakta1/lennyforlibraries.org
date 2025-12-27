@@ -17,7 +17,7 @@ export function HeroPartnerSlider() {
     <div className="py-8 -mt-8 md:-mt-12 bg-zinc-50 dark:bg-zinc-950 overflow-hidden relative z-20">
       <Container>
         <div className="flex flex-col items-center gap-4">
-          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 dark:text-zinc-500">
             Built by Libraries, For Libraries
           </p>
           <div className="relative flex w-full overflow-hidden">
@@ -42,7 +42,7 @@ export function HeroPartnerSlider() {
               {[...partners, ...partners].map((partner, i) => (
                   <span
                   key={i}
-                  className="text-sm sm:text-lg md:text-xl font-bold text-zinc-300 dark:text-zinc-700 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors cursor-default"
+                  className="text-sm sm:text-lg md:text-xl font-semibold text-zinc-500 hover:text-zinc-700 dark:text-zinc-500 dark:hover:text-zinc-300 transition-colors cursor-default"
                   style={{
                     WebkitFontSmoothing: "antialiased",
                     WebkitBackfaceVisibility: "hidden",
@@ -55,8 +55,8 @@ export function HeroPartnerSlider() {
             </motion.div>
             
             {/* Gradient fades */}
-            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-zinc-50 dark:from-zinc-950 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-zinc-50 dark:from-zinc-950 to-transparent pointer-events-none"></div>
           </div>
         </div>
       </Container>
