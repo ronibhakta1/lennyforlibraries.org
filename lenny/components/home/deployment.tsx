@@ -22,14 +22,14 @@ export function DeploymentOptions() {
       icon: <Cpu className="h-6 w-6" />,
       features: ["No setup required", "Offline-ready", "Simple updates"],
       recommended: true,
-      cta: { label: "Contact Us", href: "mailto:info@archive.org?subject=Lenny Plug & Play Inquiry", type: "contact" as const },
+      cta: { label: "Contact Us", href: "mailto:mek@archive.org?subject=Lenny Plug & Play Inquiry", type: "contact" as const },
     },
     {
       title: "Hosted",
       description: "Let us handle everything. A hosted instance with web dashboard access.",
       icon: <Cloud className="h-6 w-6" />,
       features: ["Zero maintenance", "Web-based admin", "Scalable infrastructure"],
-      cta: { label: "Contact Us", href: "mailto:info@archive.org?subject=Lenny Hosted Inquiry", type: "contact" as const },
+      cta: { label: "Contact Us", href: "mailto:mek@archive.org?subject=Lenny Hosted Inquiry", type: "contact" as const },
     }
   ]
 
