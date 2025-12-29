@@ -58,6 +58,9 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
   
+  // Output standalone build for Docker
+  output: 'standalone',
+  
   // Configure headers for caching and security
   async headers() {
     return [
