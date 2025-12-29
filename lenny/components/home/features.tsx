@@ -18,15 +18,15 @@ const features = [
         <div className="grid grid-cols-4 sm:grid-cols-5 gap-3 w-full max-w-lg">
           {[
             "/images/features/book covers/0012622006-L.jpg",
-            "/images/features/book covers/ring-lardner_jack-keefe-stories-c3c1432e-cover@2x.avif",
-            "/images/features/book covers/w-r-burnett_little-caesar-c3c1432e-cover@2x.avif",
-            "/images/features/book covers/c-s-forester_payment-deferred-c3c1432e-cover@2x.avif",
-            "/images/features/book covers/h-g-wells_in-the-days-of-the-comet-c3c1432e-cover@2x.avif",
+            "/images/features/book covers/ring-lardner_jack-keefe-stories-c3c1432e-cover.avif",
+            "/images/features/book covers/w-r-burnett_little-caesar-c3c1432e-cover.avif",
+            "/images/features/book covers/c-s-forester_payment-deferred-c3c1432e-cover.avif",
+            "/images/features/book covers/h-g-wells_in-the-days-of-the-comet-c3c1432e-cover.avif",
             "/images/features/book covers/0013220577-L.jpg",
-            "/images/features/book covers/louis-joseph-vance_the-lone-wolf-c3c1432e-cover@2x.avif",
-            "/images/features/book covers/r-austin-freeman_the-mystery-of-31-new-inn-c3c1432e-cover@2x.avif",
-            "/images/features/book covers/walter-bagehot_the-english-constitution-c3c1432e-cover@2x.avif",
-            "/images/features/book covers/william-gerhardie_futility-c3c1432e-cover@2x.avif"
+            "/images/features/book covers/louis-joseph-vance_the-lone-wolf-c3c1432e-cover.avif",
+            "/images/features/book covers/r-austin-freeman_the-mystery-of-31-new-inn-c3c1432e-cover.avif",
+            "/images/features/book covers/walter-bagehot_the-english-constitution-c3c1432e-cover.avif",
+            "/images/features/book covers/william-gerhardie_futility-c3c1432e-cover.avif"
           ].map((cover, i) => (
             <div key={i} className={cn(
               "aspect-[3/4.5] bg-[var(--card-background)] rounded-lg border border-[var(--card-border)] shadow-sm transition-all duration-500 hover:scale-110 cursor-default overflow-hidden"
@@ -95,10 +95,10 @@ const features = [
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 flex-1">
           {[
-            { title: "English Constitution", cover: "/images/features/book covers/walter-bagehot_the-english-constitution-c3c1432e-cover@2x.avif" },
-            { title: "The Lone Wolf", cover: "/images/features/book covers/louis-joseph-vance_the-lone-wolf-c3c1432e-cover@2x.avif" },
-            { title: "31 New Inn", cover: "/images/features/book covers/r-austin-freeman_the-mystery-of-31-new-inn-c3c1432e-cover@2x.avif" },
-            { title: "Disappointed Man", cover: "/images/features/book covers/w-n-p-barbellion_the-journal-of-a-disappointed-man-c3c1432e-cover@2x.avif" }
+            { title: "English Constitution", cover: "/images/features/book covers/walter-bagehot_the-english-constitution-c3c1432e-cover.avif" },
+            { title: "The Lone Wolf", cover: "/images/features/book covers/louis-joseph-vance_the-lone-wolf-c3c1432e-cover.avif" },
+            { title: "31 New Inn", cover: "/images/features/book covers/r-austin-freeman_the-mystery-of-31-new-inn-c3c1432e-cover.avif" },
+            { title: "Disappointed Man", cover: "/images/features/book covers/w-n-p-barbellion_the-journal-of-a-disappointed-man-c3c1432e-cover.avif" }
           ].map((book, i) => (
             <div key={i} className="rounded-2xl bg-[var(--card-background)] border border-[var(--card-border)] h-full flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow group/card">
                <div className="aspect-[3/4] w-full overflow-hidden border-b border-zinc-100 dark:border-zinc-800">
@@ -137,12 +137,12 @@ const features = [
             {
               title: "Jack Keefe Stories",
               author: "Ring Lardner",
-              cover: "/images/features/book covers/ring-lardner_jack-keefe-stories-c3c1432e-cover@2x.avif"
+              cover: "/images/features/book covers/ring-lardner_jack-keefe-stories-c3c1432e-cover.avif"
             },
             {
               title: "Little Caesar",
               author: "W. R. Burnett",
-              cover: "/images/features/book covers/w-r-burnett_little-caesar-c3c1432e-cover@2x.avif"
+              cover: "/images/features/book covers/w-r-burnett_little-caesar-c3c1432e-cover.avif"
             }
           ].map((book, i) => (
             <div key={i} className={cn(
@@ -181,7 +181,7 @@ const features = [
             <div className="flex gap-4 h-full">
               <div className="h-full aspect-[3/4] rounded-xl overflow-hidden border border-zinc-100 dark:border-zinc-800 shadow-sm shrink-0">
                 <img 
-                  src="/images/features/book covers/w-r-burnett_little-caesar-c3c1432e-cover@2x.avif" 
+                  src="/images/features/book covers/w-r-burnett_little-caesar-c3c1432e-cover.avif" 
                   className="w-full h-full object-cover"
                   alt="The Great Gatsby"
                 />
@@ -244,9 +244,9 @@ const features = [
         <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
           {[
             { title: "Moby Dick", cover: "/images/features/book covers/0012622006-L.jpg", action: "Borrow", price: "Free" },
-            { title: "The Odyssey", cover: "/images/features/book covers/ring-lardner_jack-keefe-stories-c3c1432e-cover@2x.avif", action: "Buy", price: "$2.99" },
-            { title: "Great Gatsby", cover: "/images/features/book covers/w-r-burnett_little-caesar-c3c1432e-cover@2x.avif", action: "Borrow", price: "Free" },
-            { title: "The Lone Wolf", cover: "/images/features/book covers/louis-joseph-vance_the-lone-wolf-c3c1432e-cover@2x.avif", action: "Buy", price: "$1.49" }
+            { title: "The Odyssey", cover: "/images/features/book covers/ring-lardner_jack-keefe-stories-c3c1432e-cover.avif", action: "Buy", price: "$2.99" },
+            { title: "Great Gatsby", cover: "/images/features/book covers/w-r-burnett_little-caesar-c3c1432e-cover.avif", action: "Borrow", price: "Free" },
+            { title: "The Lone Wolf", cover: "/images/features/book covers/louis-joseph-vance_the-lone-wolf-c3c1432e-cover.avif", action: "Buy", price: "$1.49" }
           ].map((item, i) => (
             <div key={i} className="bg-[var(--card-background)] border border-[var(--card-border)] rounded-xl p-3 shadow-sm flex flex-col gap-2 group/market-card hover:shadow-md transition-all">
                <div className="aspect-[3/4] rounded-lg overflow-hidden bg-zinc-50 dark:bg-zinc-950 border border-zinc-100 dark:border-zinc-800">
