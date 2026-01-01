@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight, Gamepad2 } from "lucide-react"
+import { ArrowRight, ExternalLink } from "lucide-react"
 
 import { Container, Section } from "@/components/layout/container"
 import { Button } from "@/components/ui/button"
@@ -32,15 +32,17 @@ export function Hero() {
                   Install Now <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </a>
-              <a href="https://reader.archive.org/?opds=https://lennyforlibraries.org/v1/api/opds" target="_blank" rel="noopener noreferrer">
+              <a href="https://reader.archive.org/?opds=https://lennyforlibraries.org/v1/api/opds" target="_blank" rel="noopener noreferrer" className="relative">
+                {/* Pulsing ring effect */}
+                <span className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-sm animate-pulse" />
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="h-12 px-6 text-base rounded-lg border-zinc-300 text-zinc-700 bg-white/50 dark:bg-black/50 backdrop-blur-sm hover:bg-white dark:hover:bg-zinc-900 transition-all duration-300 relative overflow-hidden group hover:border-zinc-400 dark:hover:border-zinc-500 hover:shadow-lg hover:-translate-y-0.5 dark:border-zinc-700 dark:text-zinc-300"
+                  className="relative h-12 px-6 text-base rounded-lg border-zinc-300 text-zinc-700 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm hover:bg-white dark:hover:bg-zinc-800 transition-all duration-300 overflow-hidden group hover:border-zinc-400 dark:hover:border-zinc-500 hover:shadow-xl hover:-translate-y-1 dark:border-zinc-600 dark:!text-white dark:hover:!text-white hover:scale-105"
                 >
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-zinc-200/50 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out dark:via-zinc-700/50" />
-                  <span className="relative flex items-center">
-                    Try Playground <Gamepad2 className="ml-2 h-4 w-4 transition-transform group-hover:scale-110 group-hover:rotate-6" />
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out dark:via-zinc-700/50" />
+                  <span className="relative flex items-center gap-2 font-semibold">
+                    Try Playground <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
                 </Button>
               </a>
