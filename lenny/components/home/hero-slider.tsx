@@ -1,15 +1,14 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Container } from "@/components/layout/container"
 
 const partners = [
-  { name: "Internet Archive" },
-  { name: "Open Library" },
-  { name: "Archive Labs" },
-  { name: "Internet Archive" },
-  { name: "Open Library" },
-  { name: "Archive Labs" },
+  "Internet Archive",
+  "Open Library", 
+  "Archive Labs",
+  "Internet Archive",
+  "Open Library", 
+  "Archive Labs",
 ]
 
 export function HeroPartnerSlider() {
@@ -20,46 +19,60 @@ export function HeroPartnerSlider() {
           <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 dark:text-zinc-500">
             Built by Libraries, For Libraries
           </p>
-          <div className="relative flex w-full overflow-hidden">
-            <motion.div
-              className="flex whitespace-nowrap gap-8 sm:gap-12 md:gap-16 items-center"
-              style={{
-                willChange: "transform",
-                WebkitBackfaceVisibility: "hidden",
-                backfaceVisibility: "hidden",
-                WebkitTransformStyle: "preserve-3d",
-                transformStyle: "preserve-3d",
-              }}
-              animate={{
-                x: [0, "-50%"],
-              }}
-              transition={{
-                duration: 20,
-                ease: "linear",
-                repeat: Infinity,
-              }}
-            >
-              {[...partners, ...partners].map((partner, i) => (
+          <div 
+            className="relative w-full overflow-hidden"
+            style={{ 
+              maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+            }}
+          >
+            <div className="marquee-track">
+              <div className="marquee-content">
+                {partners.map((partner, i) => (
                   <span
-                  key={i}
-                  className="text-sm sm:text-lg md:text-xl font-semibold text-zinc-500 hover:text-zinc-700 dark:text-zinc-500 dark:hover:text-zinc-300 transition-colors cursor-default"
-                  style={{
-                    WebkitFontSmoothing: "antialiased",
-                    WebkitBackfaceVisibility: "hidden",
-                    backfaceVisibility: "hidden",
-                  }}
-                >
-                  {partner.name}
-                </span>
-              ))}
-            </motion.div>
-            
-            {/* Gradient fades */}
-            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-zinc-50 dark:from-zinc-950 to-transparent pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-zinc-50 dark:from-zinc-950 to-transparent pointer-events-none"></div>
+                    key={`a-${i}`}
+                    className="text-sm sm:text-lg md:text-xl font-semibold text-zinc-500 hover:text-zinc-700 dark:text-zinc-500 dark:hover:text-zinc-300 transition-colors cursor-default mx-4 sm:mx-6"
+                  >
+                    {partner}
+                  </span>
+                ))}
+              </div>
+              <div className="marquee-content" aria-hidden="true">
+                {partners.map((partner, i) => (
+                  <span
+                    key={`b-${i}`}
+                    className="text-sm sm:text-lg md:text-xl font-semibold text-zinc-500 hover:text-zinc-700 dark:text-zinc-500 dark:hover:text-zinc-300 transition-colors cursor-default mx-4 sm:mx-6"
+                  >
+                    {partner}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </Container>
+      
+      <style jsx>{`
+        .marquee-track {
+          display: flex;
+          width: max-content;
+          animation: marquee 30s linear infinite;
+        }
+        
+        .marquee-content {
+          display: flex;
+          flex-shrink: 0;
+        }
+        
+        @keyframes marquee {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            transform: translate3d(-50%, 0, 0);
+          }
+        }
+      `}</style>
     </div>
   )
 }

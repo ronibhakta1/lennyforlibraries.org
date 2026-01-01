@@ -63,6 +63,11 @@ const nextConfig: NextConfig = {
   
   // Configure headers for caching and security
   async headers() {
+    const isDev = process.env.NODE_ENV === 'development';
+    const cacheControlValue = isDev 
+      ? 'no-store, must-revalidate' 
+      : 'public, max-age=31536000, immutable';
+
     return [
       {
         // Apply security headers to all routes
@@ -70,27 +75,27 @@ const nextConfig: NextConfig = {
         headers: securityHeaders,
       },
       {
-        // Cache static assets (images, fonts, etc.) for 1 year
+        // Cache static assets (images, fonts, etc.)
         source: '/images/:path*',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: cacheControlValue,
           },
         ],
       },
       {
-        // Cache fonts for 1 year
+        // Cache fonts
         source: '/fonts/:path*',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: cacheControlValue,
           },
         ],
       },
       {
-        // Cache JS/CSS bundles (they have content hashes)
+        // Cache JS/CSS bundles (they have content hashes) - Next.js handles this mostly but good to enforce
         source: '/_next/static/:path*',
         headers: [
           {
@@ -107,6 +112,27 @@ const nextConfig: NextConfig = {
   
   // Remove X-Powered-By header (security through obscurity)
   poweredByHeader: false,
+
+  async rewrites() {
+    return [
+      {
+        source: '/:path*@2x.avif',
+        destination: '/:path*.avif',
+      },
+      {
+        source: '/:path*@2x.jpg',
+        destination: '/:path*.jpg',
+      },
+       {
+        source: '/:path*@2x.png',
+        destination: '/:path*.png',
+      },
+       {
+        source: '/:path*@2x.webp',
+        destination: '/:path*.webp',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
