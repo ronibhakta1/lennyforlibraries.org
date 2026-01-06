@@ -58,7 +58,7 @@ export function Installation() {
   const cardsRef = useStaggerChildren("[data-install-card]", { stagger: 0.15 })
 
   return (
-    <Section id="installation" className="pt-0 pb-16 bg-white dark:bg-zinc-950 overflow-hidden">
+    <Section id="installation" className="pt-0 pb-16 overflow-hidden installation-bg">
       <Container className="max-w-4xl text-center relative">
         {/* Glow effect */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-zinc-200/50 dark:bg-zinc-800/20 rounded-full blur-3xl -z-10"></div>

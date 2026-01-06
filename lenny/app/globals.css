@@ -108,6 +108,8 @@
   
   --badge-primary-bg: #18181b;
   --badge-primary-text: #ffffff;
+  
+  --installation-bg: #e4e4e7;
 }
 
 /* 
@@ -156,6 +158,8 @@
   --badge-accent-bg: rgba(251, 191, 36, 0.2);
   --badge-accent-text: #FBBF24;
   --badge-accent-border: rgba(251, 191, 36, 0.4);
+  
+  --installation-bg: #27272a;
 }
 
 body {
@@ -164,6 +168,15 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Installation section background */
+.installation-bg {
+  background-color: #e4e4e7 !important;
+}
+
+.dark .installation-bg {
+  background-color: #27272a !important;
 }
 
 /* Custom Utilities for Premium feel */

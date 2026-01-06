@@ -61,48 +61,13 @@ const nextConfig: NextConfig = {
   // Output standalone build for Docker
   output: 'standalone',
   
-  // Configure headers for caching and security
+  // Configure headers for security
   async headers() {
-    const isDev = process.env.NODE_ENV === 'development';
-    const cacheControlValue = isDev 
-      ? 'no-store, must-revalidate' 
-      : 'public, max-age=31536000, immutable';
-
     return [
       {
         // Apply security headers to all routes
         source: '/:path*',
         headers: securityHeaders,
-      },
-      {
-        // Cache static assets (images, fonts, etc.)
-        source: '/images/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: cacheControlValue,
-          },
-        ],
-      },
-      {
-        // Cache fonts
-        source: '/fonts/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: cacheControlValue,
-          },
-        ],
-      },
-      {
-        // Cache JS/CSS bundles (they have content hashes) - Next.js handles this mostly but good to enforce
-        source: '/_next/static/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
       },
     ];
   },

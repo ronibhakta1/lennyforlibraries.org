@@ -16,24 +16,12 @@ export function Features() {
   const options = React.useMemo(() => ({ stagger: 0.12 }), [])
   const gridRef = useStaggerChildren("[data-bento-item]", options)
 
-  // Cache busting logic
-  const [burstCache, setBurstCache] = React.useState("")
-  
-  React.useEffect(() => {
-    // Set a random string on mount to flush cache
-    setBurstCache(Date.now().toString())
-  }, [])
 
-  const getImageUrl = (url: string) => {
-    if (!burstCache) return url
-    const separator = url.includes("?") ? "&" : "?"
-    return `${url}${separator}v=${burstCache}`
-  }
 
   const features = [
     {
-      title: "Preloaded Books",
-      description: "Thousands of open access titles included out of the box.",
+      title: "Preloaded with Ebooks",
+      description: <>800+ open titles from <a href="https://standardebooks.org" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground transition-colors">Standard Ebooks</a>.</>,
       header: (
         <div className="w-full h-full p-6 sm:p-8 bg-[var(--card-inner-background)] flex items-center justify-center overflow-hidden">
           <div className="grid grid-cols-4 sm:grid-cols-5 gap-3 w-full max-w-lg">
@@ -53,7 +41,7 @@ export function Features() {
                 "aspect-[3/4.5] bg-[var(--card-background)] rounded-lg border border-[var(--card-border)] shadow-sm transition-all duration-500 hover:scale-110 cursor-default overflow-hidden"
               )}>
                 <img 
-                  src={getImageUrl(cover)} 
+                  src={cover} 
                   className="w-full h-full object-cover"
                   alt={`Book Cover ${i + 1}`}
                 />
@@ -84,7 +72,7 @@ export function Features() {
                     </div>
                     <div className="flex-1 relative bg-zinc-700/50">
                        <img 
-                         src={getImageUrl("/images/features/book covers/0012622006-L.jpg")} 
+                         src="/images/features/book covers/0012622006-L.jpg" 
                          className="absolute inset-0 w-full h-full object-cover opacity-80"
                          alt="Book Cover"
                        />
@@ -124,7 +112,7 @@ export function Features() {
               <div key={i} className="rounded-2xl bg-[var(--card-background)] border border-[var(--card-border)] h-full flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow group/card">
                  <div className="aspect-[3/4] w-full overflow-hidden border-b border-zinc-100 dark:border-zinc-800">
                    <img 
-                     src={getImageUrl(book.cover)} 
+                     src={book.cover} 
                      alt={book.title}
                      className="w-full h-full object-cover grayscale transition-all group-hover/card:grayscale-0 group-hover/card:scale-105 duration-500"
                    />
@@ -172,7 +160,7 @@ export function Features() {
               )}>
                 <div className="h-10 w-7 shrink-0 rounded-md overflow-hidden border border-zinc-100 dark:border-zinc-800 shadow-sm">
                    <img 
-                     src={getImageUrl(book.cover)} 
+                     src={book.cover} 
                      className="w-full h-full object-cover"
                      alt={book.title}
                    />
@@ -202,7 +190,7 @@ export function Features() {
               <div className="flex gap-4 h-full">
                 <div className="h-full aspect-[3/4] rounded-xl overflow-hidden border border-zinc-100 dark:border-zinc-800 shadow-sm shrink-0">
                   <img 
-                    src={getImageUrl("/images/features/book covers/w-r-burnett_little-caesar-c3c1432e-cover.avif")} 
+                    src="/images/features/book covers/w-r-burnett_little-caesar-c3c1432e-cover.avif" 
                     className="w-full h-full object-cover"
                     alt="The Great Gatsby"
                   />
@@ -246,7 +234,7 @@ export function Features() {
           <div className="pt-10 h-full w-full">
             <div className="relative w-full h-full overflow-hidden border-t border-zinc-100 dark:border-zinc-800 group/image bg-zinc-950">
               <img 
-                src={getImageUrl("/images/features/thoriumreader/Screenshot 2025-12-25 at 7.01.08 PM.png")}
+                src="/images/features/thoriumreader/Screenshot 2025-12-25 at 7.01.08 PM.png"
                 className="w-full h-full object-contain grayscale transition-all group-hover/mockup:grayscale-0 duration-700"
                 alt="Thorium Reader"
               />
@@ -271,7 +259,7 @@ export function Features() {
             ].map((item, i) => (
               <div key={i} className="bg-[var(--card-background)] border border-[var(--card-border)] rounded-xl p-3 shadow-sm flex flex-col gap-2 group/market-card hover:shadow-md transition-all">
                  <div className="aspect-[3/4] rounded-lg overflow-hidden bg-zinc-50 dark:bg-zinc-950 border border-zinc-100 dark:border-zinc-800">
-                    <img src={getImageUrl(item.cover)} className="w-full h-full object-cover grayscale transition-all group-hover/market-card:grayscale-0" alt={item.title} />
+                    <img src={item.cover} className="w-full h-full object-cover grayscale transition-all group-hover/market-card:grayscale-0" alt={item.title} />
                  </div>
                  <div className="flex flex-col gap-1">
                     <div className="text-[10px] font-bold truncate text-[var(--card-foreground)]">{item.title}</div>
