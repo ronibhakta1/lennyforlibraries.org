@@ -54,8 +54,8 @@ export function Features() {
       className: "md:col-span-2",
     },
     {
-      title: "Mobile Apps",
-      description: "Load your Lenny feed on any device.",
+      title: "Mobile Ready",
+      description: "Works out of the box with the Internet Archive Reader App.",
       header: (
         <div className="w-full h-full flex justify-center items-end px-6">
           <div className="relative w-[180px] h-full bg-zinc-950 rounded-t-[2.5rem] border-t-[6px] border-x-[6px] border-zinc-700 p-4 shadow-2xl ring-2 ring-zinc-400/30 overflow-hidden translate-y-2">
@@ -64,30 +64,14 @@ export function Features() {
                 <div className="w-1 h-1 rounded-full bg-blue-500/50 ml-6" />
              </div>
              
-             {/* Screen content */}
-              <div className="mt-12 space-y-4">
-                 <div className="h-32 rounded-2xl bg-zinc-800 border border-zinc-700 flex flex-col overflow-hidden">
-                    <div className="p-2 pb-1">
-                      <span className="text-[10px] font-semibold text-zinc-400">Now Reading</span>
-                    </div>
-                    <div className="flex-1 relative bg-zinc-700/50">
-                       <img 
-                         src="/images/features/book covers/0012622006-L.jpg" 
-                         className="absolute inset-0 w-full h-full object-cover opacity-80"
-                         alt="Book Cover"
-                       />
-                       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2">
-                         <span className="text-[10px] font-bold text-white">The Dream</span>
-                       </div>
-                    </div>
-                 </div>
-                <div className="h-12 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center px-3">
-                   <div className="w-1/2 h-2 bg-zinc-500 rounded-full" />
-                </div>
-                <div className="h-12 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center px-3">
-                   <div className="w-1/3 h-2 bg-zinc-500 rounded-full" />
-                </div>
-             </div>
+             {/* Screen content - Reader App Screenshot */}
+              <div className="mt-8 -mx-4 -mb-4 h-full">
+                <img 
+                  src="/images/features/readerapp/archivereaderapp.png"
+                  className="w-full h-full object-cover object-top"
+                  alt="Internet Archive Reader App"
+                />
+              </div>
           </div>
         </div>
       ),
@@ -95,45 +79,8 @@ export function Features() {
       className: "md:col-span-1",
     },
     {
-      title: "Bookshelf",
-      description: "Securely store and host millions of digital books.",
-      header: (
-        <div className="relative w-full h-full p-8 flex flex-col gap-6 overflow-hidden bg-[var(--card-inner-background)]">
-          <div className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-            Your Bookshelf
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 flex-1">
-            {[
-              { title: "English Constitution", cover: "/images/features/book covers/walter-bagehot_the-english-constitution-c3c1432e-cover.avif" },
-              { title: "The Lone Wolf", cover: "/images/features/book covers/louis-joseph-vance_the-lone-wolf-c3c1432e-cover.avif" },
-              { title: "31 New Inn", cover: "/images/features/book covers/r-austin-freeman_the-mystery-of-31-new-inn-c3c1432e-cover.avif" },
-              { title: "Disappointed Man", cover: "/images/features/book covers/w-n-p-barbellion_the-journal-of-a-disappointed-man-c3c1432e-cover.avif" }
-            ].map((book, i) => (
-              <div key={i} className="rounded-2xl bg-[var(--card-background)] border border-[var(--card-border)] h-full flex flex-col overflow-hidden shadow-sm hover:shadow-md transition-shadow group/card">
-                 <div className="aspect-[3/4] w-full overflow-hidden border-b border-zinc-100 dark:border-zinc-800">
-                   <img 
-                     src={book.cover} 
-                     alt={book.title}
-                     className="w-full h-full object-cover grayscale transition-all group-hover/card:grayscale-0 group-hover/card:scale-105 duration-500"
-                   />
-                 </div>
-                 <div className="p-3">
-                   <div className="text-[10px] font-bold text-[var(--card-foreground)] truncate">
-                     {book.title}
-                   </div>
-                   <div className="h-1 w-1/2 bg-zinc-100 dark:bg-zinc-800 rounded-full mt-1.5" />
-                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ),
-      icon: <BookOpen className="h-5 w-5 text-[var(--card-muted)]" />,
-      className: "md:col-span-2",
-    },
-    {
-      title: "Card Catalog",
-      description: "Auto-sync metadata from OpenLibrary.",
+      title: "Metadata from Open Library",
+      description: "Lenny's card catalog auto-fetches book metadata from OpenLibrary.",
       header: (
         <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-[var(--card-inner-background)]">
           <div className="w-full max-w-[280px] flex flex-col gap-3 group-hover/bento:scale-105 transition-transform duration-500">
@@ -182,8 +129,8 @@ export function Features() {
       className: "md:col-span-1",
     },
     {
-      title: "Lending System",
-      description: "Configurable rules & LCP support.",
+      title: "Digital Lending System",
+      description: "Configurable lending rules for digital lending.",
       header: (
         <div className="w-full h-full flex items-end justify-center px-6 pt-4 pb-0">
           <div className="w-full h-48 bg-[var(--card-background)] rounded-t-3xl border-x border-t border-[var(--card-border)] p-5 overflow-visible">
@@ -216,8 +163,8 @@ export function Features() {
       className: "md:col-span-1",
     },
     {
-      title: "Thorium Reader",
-      description: "High-performance reading experience.",
+      title: "Thorium Web EPUB Reader",
+      description: "High-performance reading experience built-in.",
       header: (
         <div className="relative w-full h-full bg-[var(--card-background)] border border-[var(--card-border)] rounded-3xl m-6 overflow-hidden shadow-xl scale-105 group/mockup">
           <div className="absolute top-0 left-0 right-0 h-10 bg-zinc-50 dark:bg-zinc-800 border-b border-zinc-100 dark:border-zinc-700 px-4 flex items-center justify-between">
@@ -234,7 +181,7 @@ export function Features() {
           <div className="pt-10 h-full w-full">
             <div className="relative w-full h-full overflow-hidden border-t border-zinc-100 dark:border-zinc-800 group/image bg-zinc-950">
               <img 
-                src="/images/features/thoriumreader/Screenshot 2025-12-25 at 7.01.08 PM.png"
+                src="/images/features/thoriumreader/reader.png"
                 className="w-full h-full object-contain grayscale transition-all group-hover/mockup:grayscale-0 duration-700"
                 alt="Thorium Reader"
               />
@@ -248,6 +195,7 @@ export function Features() {
     {
       title: "Marketplace",
       description: "Expand your collection with ease.",
+      hidden: true, // TODO: Enable when ready
       header: (
         <div className="w-full h-full p-8 flex flex-col items-center justify-center scale-110">
           <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
@@ -295,7 +243,7 @@ export function Features() {
         
         <div ref={gridRef}>
           <BentoGrid className="max-w-6xl mx-auto">
-             {features.map((item, i) => (
+             {features.filter(item => !item.hidden).map((item, i) => (
                <BentoGridItem
                  key={i}
                  title={item.title}
