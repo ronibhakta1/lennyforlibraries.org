@@ -58,7 +58,7 @@ export function Features() {
       description: "Works out of the box with the Internet Archive Reader App.",
       header: (
         <div className="w-full h-full flex justify-center items-end px-6">
-          <div className="relative w-[180px] h-full bg-zinc-950 rounded-t-[2.5rem] border-t-[6px] border-x-[6px] border-zinc-700 p-4 shadow-2xl ring-2 ring-zinc-400/30 overflow-hidden translate-y-2">
+          <div className="relative w-[220px] sm:w-[180px] h-full bg-zinc-950 rounded-t-[2.5rem] border-t-[6px] border-x-[6px] border-zinc-700 p-4 shadow-2xl ring-2 ring-zinc-400/30 overflow-hidden translate-y-2">
              {/* Dynamic Island */}
              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-zinc-900 rounded-2xl flex items-center justify-center">
                 <div className="w-1 h-1 rounded-full bg-blue-500/50 ml-6" />
