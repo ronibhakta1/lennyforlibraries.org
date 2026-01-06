@@ -81,21 +81,38 @@ export function useStaggerChildren(
     
     if (children.length === 0) return
 
-    gsap.set(children, { opacity: 0, y: 40 })
+    // Check if element is already in viewport
+    const rect = container.getBoundingClientRect()
+    const isInViewport = rect.top < window.innerHeight * 0.85
 
-    gsap.to(children, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      stagger: options.stagger || 0.1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: container,
-        start: options.start || "top 80%",
-        toggleActions: "play none none none",
-        ...options,
-      },
-    })
+    if (isInViewport) {
+      // Already visible - animate immediately
+      gsap.set(children, { opacity: 0, y: 40 })
+      gsap.to(children, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: options.stagger || 0.1,
+        ease: "power2.out",
+        delay: 0.2,
+      })
+    } else {
+      // Not visible - use scroll trigger
+      gsap.set(children, { opacity: 0, y: 40 })
+      gsap.to(children, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: options.stagger || 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: container,
+          start: options.start || "top 80%",
+          toggleActions: "play none none none",
+          ...options,
+        },
+      })
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => {
@@ -146,20 +163,36 @@ export function useScaleIn(options: UseScrollAnimationOptions = {}) {
 
     const element = ref.current
 
-    gsap.set(element, { opacity: 0, scale: 0.95 })
+    // Check if element is already in viewport
+    const rect = element.getBoundingClientRect()
+    const isInViewport = rect.top < window.innerHeight * 0.85
 
-    gsap.to(element, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.8,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: element,
-        start: options.start || "top 85%",
-        toggleActions: "play none none none",
-        ...options,
-      },
-    })
+    if (isInViewport) {
+      // Already visible - animate immediately
+      gsap.set(element, { opacity: 0, scale: 0.95 })
+      gsap.to(element, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: "power3.out",
+        delay: 0.1,
+      })
+    } else {
+      // Not visible - use scroll trigger
+      gsap.set(element, { opacity: 0, scale: 0.95 })
+      gsap.to(element, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: element,
+          start: options.start || "top 85%",
+          toggleActions: "play none none none",
+          ...options,
+        },
+      })
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => {

@@ -1,5 +1,4 @@
 import { Hero } from "@/components/home/hero"
-import { HeroPartnerSlider } from "@/components/home/hero-slider"
 import { Features } from "@/components/home/features"
 import { Installation } from "@/components/home/installation"
 import { Vision } from "@/components/home/vision"
@@ -10,7 +9,6 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-0 bg-white dark:bg-zinc-950">
       <Hero />
-      <HeroPartnerSlider />
       <Installation />
       <Features />
       <Vision />
