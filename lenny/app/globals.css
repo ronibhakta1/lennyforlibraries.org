@@ -159,7 +159,7 @@
   --badge-accent-text: #FBBF24;
   --badge-accent-border: rgba(251, 191, 36, 0.4);
   
-  --installation-bg: #1f1f1f;
+  --installation-bg: #000000;
 }
 
 body {
@@ -176,7 +176,7 @@ body {
 }
 
 .dark .installation-bg {
-  background-color: #1f1f1f !important;
+  background-color: #000000 !important;
 }
 
 /* Custom Utilities for Premium feel */
