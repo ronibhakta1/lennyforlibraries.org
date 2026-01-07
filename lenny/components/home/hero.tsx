@@ -10,7 +10,7 @@ import { H1, Lead } from "@/components/ui/typography"
 
 export function Hero() {
   return (
-    <Section className="flex min-h-[60vh] lg:min-h-[50vh] 2xl:min-h-[40vh] flex-col items-center justify-center overflow-hidden pt-8 pb-12 sm:pb-16 md:pt-16 md:pb-20 lg:pb-28 xl:pb-36 2xl:pb-48 relative">
+    <Section className="flex min-h-[55vh] lg:min-h-[45vh] 2xl:min-h-[35vh] flex-col items-center justify-center overflow-hidden pt-12 pb-8 sm:pb-10 md:pt-20 md:pb-12 lg:pb-16 xl:pb-20 2xl:pb-24 relative">
       <Container className="relative z-10 max-w-[1400px]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-20 items-center text-left">
           <motion.div
