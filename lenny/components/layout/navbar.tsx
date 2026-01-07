@@ -54,7 +54,7 @@ export function Navbar() {
               </Link>
             ))}
             <a
-              href="https://github.com/internetarchive/lenny"
+              href="https://github.com/archiveLabs/lenny"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-full border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 transition-all"
@@ -116,7 +116,7 @@ export function Navbar() {
                   </Link>
                 ))}
                 <a
-                  href="https://github.com/internetarchive/lenny"
+                  href="https://github.com/archiveLabs/lenny"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 py-2.5 text-sm font-medium rounded-full border border-zinc-300 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200"
